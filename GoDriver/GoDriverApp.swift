@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 @main
-struct GoDriverApp: App {
+struct GoDriverApp: SwiftUI.App {
+    
+    let app: RealmSwift.App? = .init(id: "application-0-wwixx")
+    
+    var config = Realm.Configuration.defaultConfiguration
+    init() {
+        config.schemaVersion = 2
+    }
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SyncContentView(app: app!)
         }
     }
 }

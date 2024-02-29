@@ -15,6 +15,9 @@
 		99495BAB2B90A41700D726CC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 99495BAA2B90A41700D726CC /* Realm */; };
 		99495BAD2B90A41700D726CC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 99495BAC2B90A41700D726CC /* RealmSwift */; };
 		99495BAF2B90A56E00D726CC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99495BAE2B90A56E00D726CC /* LoginViewModel.swift */; };
+		99495BB22B90BDB500D726CC /* SyncContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99495BB12B90BDB400D726CC /* SyncContentView.swift */; };
+		99495BB42B90C17800D726CC /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99495BB32B90C17800D726CC /* Driver.swift */; };
+		99495BBC2B90FD6400D726CC /* DriverStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99495BBB2B90FD6400D726CC /* DriverStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		99495BA02B909E7800D726CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		99495BA72B90A3F600D726CC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		99495BAE2B90A56E00D726CC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		99495BB12B90BDB400D726CC /* SyncContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncContentView.swift; sourceTree = "<group>"; };
+		99495BB32B90C17800D726CC /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		99495BBB2B90FD6400D726CC /* DriverStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,8 @@
 				99495B9D2B909E7800D726CC /* Assets.xcassets */,
 				99495B9F2B909E7800D726CC /* Preview Content */,
 				99495BB02B90A57200D726CC /* Login */,
+				99495BB12B90BDB400D726CC /* SyncContentView.swift */,
+				99495BBD2B90FD6A00D726CC /* Models */,
 			);
 			path = GoDriver;
 			sourceTree = "<group>";
@@ -83,6 +91,15 @@
 				99495BAE2B90A56E00D726CC /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		99495BBD2B90FD6A00D726CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				99495BB32B90C17800D726CC /* Driver.swift */,
+				99495BBB2B90FD6400D726CC /* DriverStatus.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +180,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				99495BAF2B90A56E00D726CC /* LoginViewModel.swift in Sources */,
+				99495BB22B90BDB500D726CC /* SyncContentView.swift in Sources */,
+				99495BBC2B90FD6400D726CC /* DriverStatus.swift in Sources */,
 				99495BA82B90A3F600D726CC /* LoginView.swift in Sources */,
+				99495BB42B90C17800D726CC /* Driver.swift in Sources */,
 				99495B9C2B909E7600D726CC /* ContentView.swift in Sources */,
 				99495B9A2B909E7600D726CC /* GoDriverApp.swift in Sources */,
 			);
@@ -302,6 +322,7 @@
 				DEVELOPMENT_TEAM = QH3T53K3KZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Yassir needs your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -331,6 +352,7 @@
 				DEVELOPMENT_TEAM = QH3T53K3KZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Yassir needs your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

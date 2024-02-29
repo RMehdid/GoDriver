@@ -14,7 +14,7 @@ extension LoginView {
         @Published private(set) var user: User?
         
         func loginAnonymous() {
-            let app = App(id: "devicesync-watqv")
+            let app = App(id: "application-0-wwixx")
             
             app.login(credentials: Credentials.anonymous) { result in
                 switch result {

@@ -6,20 +6,38 @@
 //
 
 import SwiftUI
+import MapKit
+import RealmSwift
 
 struct ContentView: View {
-    @State private var pickup = ""
-    @State private var dropOff = ""
+    
+//    @ObservedResults(Driver.self) var users
+    
     var body: some View {
-        VStack {
-            TextField("pickup", text: $pickup)
-            TextField("drop off", text: $dropOff)
+        ZStack(alignment: .bottom){
+            Map(initialPosition: .automatic)
             
-            Button("Create") {
-                
+            VStack{
+                VStack{
+                    Text("Revenus du jour")
+                        .font(.system(size: 14, weight: .regular))
+                    Text("")
+                        .font(.system(size: 22, weight: .heavy))
+                }
+                .padding()
+                .padding(.horizontal)
+                .background(.yaDarkPurple)
+                .foregroundStyle(.white)
+                .clipShape(Capsule())
+                Spacer()
+                RoundedRectangle(cornerRadius: 8)
+                    .ignoresSafeArea()
+                    .frame(height: 100)
+                    .overlay {
+                        Text("Yo")
+                    }
             }
         }
-        .padding()
     }
 }
 
