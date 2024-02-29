@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var pickup = ""
+    @State private var dropOff = ""
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            TextField("pickup", text: $pickup)
+            TextField("drop off", text: $dropOff)
+            
+            Button("Create") {
+                
+            }
         }
         .padding()
     }
