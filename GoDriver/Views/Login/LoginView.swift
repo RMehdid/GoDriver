@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @StateObject private var vm = LoginViewModel()
+    @StateObject private var vm = ViewModel()
     var body: some View {
         VStack{
             Spacer()

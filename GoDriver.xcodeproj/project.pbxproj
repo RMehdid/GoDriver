@@ -7,30 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99251D372B91DA6F004734F9 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99251D362B91DA6F004734F9 /* RealmManager.swift */; };
+		99251D3A2B91E3FC004734F9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99251D392B91E3FB004734F9 /* HomeViewModel.swift */; };
+		99251D712B93299D004734F9 /* atlasConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99251D702B93299D004734F9 /* atlasConfig.plist */; };
 		99495B9A2B909E7600D726CC /* GoDriverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99495B992B909E7600D726CC /* GoDriverApp.swift */; };
-		99495B9C2B909E7600D726CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99495B9B2B909E7600D726CC /* ContentView.swift */; };
+		99495B9C2B909E7600D726CC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99495B9B2B909E7600D726CC /* HomeView.swift */; };
 		99495B9E2B909E7800D726CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99495B9D2B909E7800D726CC /* Assets.xcassets */; };
 		99495BA12B909E7800D726CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99495BA02B909E7800D726CC /* Preview Assets.xcassets */; };
 		99495BA82B90A3F600D726CC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99495BA72B90A3F600D726CC /* LoginView.swift */; };
 		99495BAB2B90A41700D726CC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 99495BAA2B90A41700D726CC /* Realm */; };
 		99495BAD2B90A41700D726CC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 99495BAC2B90A41700D726CC /* RealmSwift */; };
 		99495BAF2B90A56E00D726CC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99495BAE2B90A56E00D726CC /* LoginViewModel.swift */; };
-		99495BB22B90BDB500D726CC /* SyncContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99495BB12B90BDB400D726CC /* SyncContentView.swift */; };
 		99495BB42B90C17800D726CC /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99495BB32B90C17800D726CC /* Driver.swift */; };
 		99495BBC2B90FD6400D726CC /* DriverStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99495BBB2B90FD6400D726CC /* DriverStatus.swift */; };
+		99BCFE412B94AB2E003FF204 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99BCFE402B94AB2E003FF204 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		99251D362B91DA6F004734F9 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		99251D392B91E3FB004734F9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		99251D702B93299D004734F9 /* atlasConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = atlasConfig.plist; sourceTree = "<group>"; };
 		99495B962B909E7600D726CC /* GoDriver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoDriver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99495B992B909E7600D726CC /* GoDriverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoDriverApp.swift; sourceTree = "<group>"; };
-		99495B9B2B909E7600D726CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		99495B9B2B909E7600D726CC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		99495B9D2B909E7800D726CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99495BA02B909E7800D726CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		99495BA72B90A3F600D726CC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		99495BAE2B90A56E00D726CC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		99495BB12B90BDB400D726CC /* SyncContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncContentView.swift; sourceTree = "<group>"; };
 		99495BB32B90C17800D726CC /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		99495BBB2B90FD6400D726CC /* DriverStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStatus.swift; sourceTree = "<group>"; };
+		99BCFE402B94AB2E003FF204 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,9 +52,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		99251D382B91DB27004734F9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				99251D362B91DA6F004734F9 /* RealmManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		99251D3B2B91E7C6004734F9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				99495B9B2B909E7600D726CC /* HomeView.swift */,
+				99251D392B91E3FB004734F9 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		99251D3C2B91E7D4004734F9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				99495BB02B90A57200D726CC /* Login */,
+				99251D3B2B91E7C6004734F9 /* Home */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		99495B8D2B909E7600D726CC = {
 			isa = PBXGroup;
 			children = (
+				99BCFE402B94AB2E003FF204 /* LaunchScreen.storyboard */,
 				99495B982B909E7600D726CC /* GoDriver */,
 				99495B972B909E7600D726CC /* Products */,
 			);
@@ -65,12 +98,12 @@
 		99495B982B909E7600D726CC /* GoDriver */ = {
 			isa = PBXGroup;
 			children = (
+				99251D702B93299D004734F9 /* atlasConfig.plist */,
+				99251D382B91DB27004734F9 /* Managers */,
 				99495B992B909E7600D726CC /* GoDriverApp.swift */,
-				99495B9B2B909E7600D726CC /* ContentView.swift */,
+				99251D3C2B91E7D4004734F9 /* Views */,
 				99495B9D2B909E7800D726CC /* Assets.xcassets */,
 				99495B9F2B909E7800D726CC /* Preview Content */,
-				99495BB02B90A57200D726CC /* Login */,
-				99495BB12B90BDB400D726CC /* SyncContentView.swift */,
 				99495BBD2B90FD6A00D726CC /* Models */,
 			);
 			path = GoDriver;
@@ -168,6 +201,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				99495BA12B909E7800D726CC /* Preview Assets.xcassets in Resources */,
+				99BCFE412B94AB2E003FF204 /* LaunchScreen.storyboard in Resources */,
+				99251D712B93299D004734F9 /* atlasConfig.plist in Resources */,
 				99495B9E2B909E7800D726CC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,11 +215,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				99495BAF2B90A56E00D726CC /* LoginViewModel.swift in Sources */,
-				99495BB22B90BDB500D726CC /* SyncContentView.swift in Sources */,
+				99251D3A2B91E3FC004734F9 /* HomeViewModel.swift in Sources */,
+				99251D372B91DA6F004734F9 /* RealmManager.swift in Sources */,
 				99495BBC2B90FD6400D726CC /* DriverStatus.swift in Sources */,
 				99495BA82B90A3F600D726CC /* LoginView.swift in Sources */,
 				99495BB42B90C17800D726CC /* Driver.swift in Sources */,
-				99495B9C2B909E7600D726CC /* ContentView.swift in Sources */,
+				99495B9C2B909E7600D726CC /* HomeView.swift in Sources */,
 				99495B9A2B909E7600D726CC /* GoDriverApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +362,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -356,6 +393,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

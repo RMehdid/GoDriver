@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 extension LoginView {
-    class LoginViewModel: ObservableObject {
+    class ViewModel: ObservableObject {
         
         @Published private(set) var user: User?
         

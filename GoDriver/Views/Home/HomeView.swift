@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  HomeView.swift
 //  GoDriver
 //
 //  Created by Samy Mehdid on 29/2/2024.
@@ -9,9 +9,11 @@ import SwiftUI
 import MapKit
 import RealmSwift
 
-struct ContentView: View {
+struct HomeView: View {
     
-//    @ObservedResults(Driver.self) var users
+    @StateObject var driver: Driver
+    
+    @State private var isOnline = false
     
     var body: some View {
         ZStack(alignment: .bottom){
@@ -21,8 +23,11 @@ struct ContentView: View {
                 VStack{
                     Text("Revenus du jour")
                         .font(.system(size: 14, weight: .regular))
-                    Text("")
+                    
+                    
+                    Text("\(driver.revenue) DA")
                         .font(.system(size: 22, weight: .heavy))
+
                 }
                 .padding()
                 .padding(.horizontal)
@@ -30,17 +35,18 @@ struct ContentView: View {
                 .foregroundStyle(.white)
                 .clipShape(Capsule())
                 Spacer()
-                RoundedRectangle(cornerRadius: 8)
-                    .ignoresSafeArea()
-                    .frame(height: 100)
-                    .overlay {
-                        Text("Yo")
-                    }
+                
+                Toggle("Online", isOn: $isOnline)
+                    .padding()
+                    .background(Color.white)
             }
+        }
+        .onAppear {
+//            viewModel.getDriver(id: .generate())
         }
     }
 }
 
 #Preview {
-    ContentView()
+    HomeView(driver: Driver())
 }

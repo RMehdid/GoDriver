@@ -9,11 +9,15 @@ import Foundation
 import RealmSwift
 
 class Driver: Object, ObjectKeyIdentifiable {
-    @Persisted(primaryKey: true) var _id: ObjectId
+    @Persisted(primaryKey: true) var _id = UUID().uuidString
     
     @Persisted var fullname: String
-    @Persisted var tripRequestId: Int?
-    @Persisted var currentTripId: Int?
+    @Persisted var tripRequestId: ObjectId?
+    @Persisted var currentTripId: ObjectId?
     @Persisted var status: DriverStatus
     @Persisted var revenue: Int
+    
+    var isOnline: Bool {
+        return status != .offline
+    }
 }

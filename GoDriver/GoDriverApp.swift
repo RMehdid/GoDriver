@@ -11,15 +11,20 @@ import RealmSwift
 @main
 struct GoDriverApp: SwiftUI.App {
     
-    let app: RealmSwift.App? = .init(id: "application-0-wwixx")
-    
-    var config = Realm.Configuration.defaultConfiguration
-    init() {
-        config.schemaVersion = 2
-    }
+    @StateObject private var realmManager = RealmManager.shared
+
     var body: some Scene {
         WindowGroup {
-            SyncContentView(app: app!)
+            VStack{
+                if let realm = realmManager.realm,
+                   let driver = realmManager.driver {
+                    HomeView(driver: driver)
+                        .environment(\.realmConfiguration, realm.configuration)
+                        .environment(\.realm, realm)
+                }
+            }.task {
+                try? await realmManager.initialize()
+            }
         }
     }
 }
