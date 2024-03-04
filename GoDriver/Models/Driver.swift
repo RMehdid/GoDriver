@@ -16,12 +16,13 @@ class Driver: Object, ObjectKeyIdentifiable {
     @Persisted var currentTripId: ObjectId?
     @Persisted var isOnline: Bool
     @Persisted var revenue: Int
+    @Persisted var profileImageUrl: String?
     
     convenience init(id: String, fullname: String) {
         self.init()
         self._id = id
         self.fullname = fullname
-        self.tripRequestId = nil
+        self.tripRequestId = .generate()
         self.currentTripId = nil
         self.isOnline = false
         self.revenue = 0

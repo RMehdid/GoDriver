@@ -6,13 +6,21 @@
 //
 
 import SwiftUI
+import RealmSwift
 
-struct TripRequestView: View {
+struct TripRequestSheet: View {
+    
+    @StateObject private var viewModel = ViewModel()
+    
+    init(id: ObjectId) {
+        viewModel.getTripRequest(id)
+    }
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    TripRequestView()
+    TripRequestSheet(id: .generate())
 }

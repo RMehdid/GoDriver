@@ -26,9 +26,11 @@
 		99368E012B95E4E1000FC901 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99368E002B95E4E1000FC901 /* HomeView.swift */; };
 		99368E032B95E541000FC901 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99368E022B95E541000FC901 /* HomeViewModel.swift */; };
 		99368E082B9612D4000FC901 /* TripRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99368E072B9612D4000FC901 /* TripRequestView.swift */; };
-		99368E0C2B9612F5000FC901 /* TripRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99368E0B2B9612F5000FC901 /* TripRequest.swift */; };
+		99368E0C2B9612F5000FC901 /* TripRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99368E0B2B9612F5000FC901 /* TripRequestViewModel.swift */; };
 		99368E102B961404000FC901 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99368E0F2B961404000FC901 /* LaunchScreen.storyboard */; };
 		99495BB62B90C9D600D726CC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99495BB52B90C9D600D726CC /* Color.swift */; };
+		9982BBE12B9624540021FB1C /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBE02B9624540021FB1C /* Trip.swift */; };
+		9982BBE32B963ACF0021FB1C /* Rider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBE22B963ACF0021FB1C /* Rider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,9 +52,11 @@
 		99368E002B95E4E1000FC901 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		99368E022B95E541000FC901 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		99368E072B9612D4000FC901 /* TripRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRequestView.swift; sourceTree = "<group>"; };
-		99368E0B2B9612F5000FC901 /* TripRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRequest.swift; sourceTree = "<group>"; };
+		99368E0B2B9612F5000FC901 /* TripRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRequestViewModel.swift; sourceTree = "<group>"; };
 		99368E0F2B961404000FC901 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99495BB52B90C9D600D726CC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		9982BBE02B9624540021FB1C /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		9982BBE22B963ACF0021FB1C /* Rider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,12 +94,12 @@
 			children = (
 				99368E062B95FA8D000FC901 /* Managers */,
 				99495BB72B90C9DB00D726CC /* Extensions */,
-				99368DF72B95D7BB000FC901 /* Models */,
 				912196BD27C6868100407648 /* atlasConfig.plist */,
 				911F548727C6A2BC005D4876 /* AppConfig.swift */,
 				913D464A2770E46800ABE7D3 /* App.swift */,
 				68D3DF592942677E005209D9 /* Constants.swift */,
 				917097E727A0600000F1D65B /* Views */,
+				99368DF72B95D7BB000FC901 /* Models */,
 				913D46502770E46A00ABE7D3 /* Preview Content */,
 				913D464E2770E46A00ABE7D3 /* Assets.xcassets */,
 			);
@@ -128,6 +132,8 @@
 				99368DF82B95D7CB000FC901 /* Driver.swift */,
 				99368DFA2B95D7E9000FC901 /* DriverStatus.swift */,
 				99368DFE2B95DA91000FC901 /* UiState.swift */,
+				9982BBE02B9624540021FB1C /* Trip.swift */,
+				9982BBE22B963ACF0021FB1C /* Rider.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -162,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				99368E072B9612D4000FC901 /* TripRequestView.swift */,
-				99368E0B2B9612F5000FC901 /* TripRequest.swift */,
+				99368E0B2B9612F5000FC901 /* TripRequestViewModel.swift */,
 			);
 			path = TripRequest;
 			sourceTree = "<group>";
@@ -256,13 +262,15 @@
 			files = (
 				99368E032B95E541000FC901 /* HomeViewModel.swift in Sources */,
 				917097DE27A05F0000F1D65B /* OpenRealmView.swift in Sources */,
+				9982BBE32B963ACF0021FB1C /* Rider.swift in Sources */,
 				99368DFF2B95DA92000FC901 /* UiState.swift in Sources */,
 				913D46622770F0C600ABE7D3 /* LoginView.swift in Sources */,
-				99368E0C2B9612F5000FC901 /* TripRequest.swift in Sources */,
+				99368E0C2B9612F5000FC901 /* TripRequestViewModel.swift in Sources */,
 				913D464D2770E46800ABE7D3 /* ContentView.swift in Sources */,
 				99495BB62B90C9D600D726CC /* Color.swift in Sources */,
 				99368E082B9612D4000FC901 /* TripRequestView.swift in Sources */,
 				99368DF62B95C75B000FC901 /* RealmManager.swift in Sources */,
+				9982BBE12B9624540021FB1C /* Trip.swift in Sources */,
 				99368DF92B95D7CB000FC901 /* Driver.swift in Sources */,
 				911F548827C6A2BC005D4876 /* AppConfig.swift in Sources */,
 				99368E012B95E4E1000FC901 /* HomeView.swift in Sources */,

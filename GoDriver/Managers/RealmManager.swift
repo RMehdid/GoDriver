@@ -77,4 +77,9 @@ class RealmManager: ObservableObject {
         
         self.driver = self.realm?.object(ofType: Driver.self, forPrimaryKey: id)
     }
+    
+    @MainActor
+    func getTrip(id: ObjectId) throws -> Trip? {
+        return self.realm?.object(ofType: Trip.self, forPrimaryKey: id)
+    }
 }
