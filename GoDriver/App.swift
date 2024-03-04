@@ -12,7 +12,7 @@ let atlasUrl = theAppConfig.atlasUrl
 let app = App(id: theAppConfig.appId, configuration: AppConfiguration(baseURL: theAppConfig.baseUrl, transport: nil))
 
 @main
-struct realmSwiftUIApp: SwiftUI.App {
+struct GoDriverApp: SwiftUI.App {
 
     var body: some Scene {
         WindowGroup {

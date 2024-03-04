@@ -27,6 +27,7 @@
 		99368E032B95E541000FC901 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99368E022B95E541000FC901 /* HomeViewModel.swift */; };
 		99368E082B9612D4000FC901 /* TripRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99368E072B9612D4000FC901 /* TripRequestView.swift */; };
 		99368E0C2B9612F5000FC901 /* TripRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99368E0B2B9612F5000FC901 /* TripRequest.swift */; };
+		99368E102B961404000FC901 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99368E0F2B961404000FC901 /* LaunchScreen.storyboard */; };
 		99495BB62B90C9D600D726CC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99495BB52B90C9D600D726CC /* Color.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +35,7 @@
 		68D3DF592942677E005209D9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		911F548727C6A2BC005D4876 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		912196BD27C6868100407648 /* atlasConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = atlasConfig.plist; sourceTree = "<group>"; };
-		913D46472770E46800ABE7D3 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		913D46472770E46800ABE7D3 /* GoDriver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoDriver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		913D464A2770E46800ABE7D3 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		913D464C2770E46800ABE7D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		913D464E2770E46A00ABE7D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,6 +51,7 @@
 		99368E022B95E541000FC901 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		99368E072B9612D4000FC901 /* TripRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRequestView.swift; sourceTree = "<group>"; };
 		99368E0B2B9612F5000FC901 /* TripRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRequest.swift; sourceTree = "<group>"; };
+		99368E0F2B961404000FC901 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99495BB52B90C9D600D726CC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,7 +71,8 @@
 		913D463E2770E46800ABE7D3 = {
 			isa = PBXGroup;
 			children = (
-				913D46492770E46800ABE7D3 /* App */,
+				99368E0F2B961404000FC901 /* LaunchScreen.storyboard */,
+				913D46492770E46800ABE7D3 /* GoDriver */,
 				913D46482770E46800ABE7D3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,12 +80,12 @@
 		913D46482770E46800ABE7D3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				913D46472770E46800ABE7D3 /* App.app */,
+				913D46472770E46800ABE7D3 /* GoDriver.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		913D46492770E46800ABE7D3 /* App */ = {
+		913D46492770E46800ABE7D3 /* GoDriver */ = {
 			isa = PBXGroup;
 			children = (
 				99368E062B95FA8D000FC901 /* Managers */,
@@ -96,7 +99,7 @@
 				913D46502770E46A00ABE7D3 /* Preview Content */,
 				913D464E2770E46A00ABE7D3 /* Assets.xcassets */,
 			);
-			path = App;
+			path = GoDriver;
 			sourceTree = "<group>";
 		};
 		913D46502770E46A00ABE7D3 /* Preview Content */ = {
@@ -175,9 +178,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		913D46462770E46800ABE7D3 /* App */ = {
+		913D46462770E46800ABE7D3 /* GoDriver */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 913D46552770E46A00ABE7D3 /* Build configuration list for PBXNativeTarget "App" */;
+			buildConfigurationList = 913D46552770E46A00ABE7D3 /* Build configuration list for PBXNativeTarget "GoDriver" */;
 			buildPhases = (
 				913D46432770E46800ABE7D3 /* Sources */,
 				913D46442770E46800ABE7D3 /* Frameworks */,
@@ -187,13 +190,13 @@
 			);
 			dependencies = (
 			);
-			name = App;
+			name = GoDriver;
 			packageProductDependencies = (
 				915E4139284937E700D7C234 /* Realm */,
 				915E413B284937E700D7C234 /* RealmSwift */,
 			);
 			productName = "realm-template-apps-swiftui";
-			productReference = 913D46472770E46800ABE7D3 /* App.app */;
+			productReference = 913D46472770E46800ABE7D3 /* GoDriver.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -211,7 +214,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 913D46422770E46800ABE7D3 /* Build configuration list for PBXProject "App" */;
+			buildConfigurationList = 913D46422770E46800ABE7D3 /* Build configuration list for PBXProject "GoDriver" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -227,7 +230,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				913D46462770E46800ABE7D3 /* App */,
+				913D46462770E46800ABE7D3 /* GoDriver */,
 			);
 		};
 /* End PBXProject section */
@@ -238,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				913D46522770E46A00ABE7D3 /* Preview Assets.xcassets in Resources */,
+				99368E102B961404000FC901 /* LaunchScreen.storyboard in Resources */,
 				913D464F2770E46A00ABE7D3 /* Assets.xcassets in Resources */,
 				912196BE27C6868100407648 /* atlasConfig.plist in Resources */,
 			);
@@ -397,13 +401,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"GoDriver/Preview Content\"";
 				DEVELOPMENT_TEAM = QH3T53K3KZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -427,13 +432,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"GoDriver/Preview Content\"";
 				DEVELOPMENT_TEAM = QH3T53K3KZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -453,7 +459,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		913D46422770E46800ABE7D3 /* Build configuration list for PBXProject "App" */ = {
+		913D46422770E46800ABE7D3 /* Build configuration list for PBXProject "GoDriver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				913D46532770E46A00ABE7D3 /* Debug */,
@@ -462,7 +468,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		913D46552770E46A00ABE7D3 /* Build configuration list for PBXNativeTarget "App" */ = {
+		913D46552770E46A00ABE7D3 /* Build configuration list for PBXNativeTarget "GoDriver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				913D46562770E46A00ABE7D3 /* Debug */,
