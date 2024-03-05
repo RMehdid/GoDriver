@@ -12,7 +12,7 @@ struct ProfileTextFieldStyle: TextFieldStyle {
     private let canCopy: Bool
     private let title: String
     
-    init(title: String, canCopy: Bool) {
+    init(title: String, canCopy: Bool = false) {
         self.title = title
         self.canCopy = canCopy
     }
@@ -30,6 +30,7 @@ struct ProfileTextFieldStyle: TextFieldStyle {
                 if canCopy {
                     Button {
                         // implement copy here
+                        
                     } label: {
                         Image("ic_copy")
                             .resizable()
