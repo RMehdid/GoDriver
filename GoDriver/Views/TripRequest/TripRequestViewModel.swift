@@ -11,16 +11,29 @@ import RealmSwift
 extension TripRequestSheet {
     class ViewModel: ObservableObject {
         
-        @ObservedRealmObject var trip: Trip = Trip()
+        @Published var trip: Trip?
         
         let realmManager = RealmManager.shared
         
         @MainActor
         func getTripRequest(_ id: ObjectId) {
             do {
-                self.trip = try realmManager.getTrip(id: id) ?? Trip()
+                self.trip = try realmManager.getTrip(id: id)
             } catch {
                 debugPrint(error.localizedDescription)
+            }
+        }
+        
+        @MainActor
+        func rejectTrip(tripId: ObjectId) {
+            guard realmManager.driver?.tripRequestId == tripId else { return }
+            
+            do {
+                try realmManager.realm?.write {
+                    realmManager.driver?.tripRequestId = nil
+                }
+            } catch {
+                print(error.localizedDescription)
             }
         }
     }

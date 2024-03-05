@@ -27,8 +27,10 @@ struct TripRequestSheet: View {
                             .resizable()
                             .frame(width: 16, height: 28)
                         
-                        Text(viewModel.trip.pickup)
-                            .font(.system(size: 14, weight: .semibold))
+                        if let pickup = viewModel.trip?.pickup {
+                            Text(pickup)
+                                .font(.system(size: 14, weight: .semibold))
+                        }
                         
                         Spacer()
                         
@@ -44,23 +46,25 @@ struct TripRequestSheet: View {
                             .resizable()
                             .frame(width: 16, height: 52)
                         
-                        Text(viewModel.trip.dropOff)
-                            .font(.system(size: 14, weight: .semibold))
-                        
+                        if let dropOff = viewModel.trip?.dropOff {
+                            Text(dropOff)
+                                .font(.system(size: 14, weight: .semibold))
+                        }
                         Spacer()
                     }
                 }
                 
                 ProgressBar(secondsAlive: 15)
                 
-                Text("\(viewModel.trip.price) DA")
-                    .font(.system(size: 18, weight: .semibold))
-                
+                if let price = viewModel.trip?.price {
+                    Text("\(price) DA")
+                        .font(.system(size: 18, weight: .semibold))
+                }
                 HStack {
                     Spacer()
                     
                     Button {
-                        
+                        viewModel.rejectTrip(tripId: tripId)
                     } label: {
                         Image(systemName: "multiply")
                             .padding(12)
