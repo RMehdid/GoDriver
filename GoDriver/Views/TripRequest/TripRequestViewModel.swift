@@ -13,7 +13,7 @@ extension TripRequestSheet {
         
         @Published var trip: Trip?
         
-        let realmManager = RealmManager.shared
+        private let realmManager = RealmManager.shared
         
         @MainActor
         func getTripRequest(_ id: ObjectId) {
@@ -21,6 +21,21 @@ extension TripRequestSheet {
                 self.trip = try realmManager.getTrip(id: id)
             } catch {
                 debugPrint(error.localizedDescription)
+            }
+        }
+        
+        @MainActor
+        func acceptTrip(tripId: ObjectId) {
+            guard realmManager.driver?.tripRequestId == tripId else { return }
+            
+            do {
+                try realmManager.realm?.write {
+                    realmManager.driver?.currentTripId = tripId
+                    self.trip?.status = .accepted
+                    realmManager.driver?.tripRequestId = nil
+                }
+            } catch {
+                print(error.localizedDescription)
             }
         }
         

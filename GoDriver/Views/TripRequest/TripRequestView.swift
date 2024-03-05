@@ -76,7 +76,7 @@ struct TripRequestSheet: View {
                     .buttonStyle(PlainButtonStyle())
                     
                     Button{
-                        
+                        viewModel.acceptTrip(tripId: tripId)
                     } label: {
                         Text("Accept")
                             .font(.system(size: 14, weight: .semibold))
