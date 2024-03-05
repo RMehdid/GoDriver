@@ -17,6 +17,9 @@ struct GoDriverApp: SwiftUI.App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onAppear {
+                    Logger.shared.level = .debug
+                }
         }
     }
 }

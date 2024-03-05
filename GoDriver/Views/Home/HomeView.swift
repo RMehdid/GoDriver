@@ -45,7 +45,7 @@ struct HomeView: View {
                         }
                     }
                 
-                VStack{
+                VStack(spacing: 0){
                     VStack{
                         Text("Revenus du jour")
                             .font(.system(size: 14, weight: .regular))

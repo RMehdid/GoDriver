@@ -102,8 +102,8 @@
 		913D46492770E46800ABE7D3 /* GoDriver */ = {
 			isa = PBXGroup;
 			children = (
-				9982BBEB2B9709170021FB1C /* Components */,
 				99368E062B95FA8D000FC901 /* Managers */,
+				9982BBEB2B9709170021FB1C /* Components */,
 				99495BB72B90C9DB00D726CC /* Extensions */,
 				912196BD27C6868100407648 /* atlasConfig.plist */,
 				911F548727C6A2BC005D4876 /* AppConfig.swift */,

@@ -20,7 +20,7 @@ class Trip: Object, ObjectKeyIdentifiable {
     
     @Persisted var dropOff: String
     
-    @Persisted var rider: Rider
+//    @Persisted var rider: Rider
     
     convenience init(id: ObjectId) {
         self.init()
