@@ -17,6 +17,7 @@ class Driver: Object, ObjectKeyIdentifiable {
     @Persisted var isOnline: Bool
     @Persisted var revenue: Int
     @Persisted var profileImageUrl: String?
+    @Persisted var phoneNumber: String
     
     convenience init(id: String, fullname: String) {
         self.init()
@@ -26,5 +27,7 @@ class Driver: Object, ObjectKeyIdentifiable {
         self.currentTripId = nil
         self.isOnline = false
         self.revenue = 0
+        self.profileImageUrl = nil
+        self.phoneNumber = "+213540408051"
     }
 }
