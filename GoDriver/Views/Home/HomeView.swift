@@ -36,64 +36,66 @@ struct HomeView: View {
     
     var body: some View {
         TabView {
-            ZStack(alignment: .bottom){
-                Map(initialPosition: .automatic)
-                    .overlay {
-                        if !isOnline {
-                            Color.black.opacity(0.2)
-                                .ignoresSafeArea()
+            NavigationStack {
+                ZStack(alignment: .bottom){
+                    Map(initialPosition: .automatic)
+                        .overlay {
+                            if !isOnline {
+                                Color.black.opacity(0.2)
+                                    .ignoresSafeArea()
+                            }
                         }
-                    }
-                
-                VStack(spacing: 0){
-                    VStack{
-                        Text("Revenus du jour")
-                            .font(.system(size: 14, weight: .regular))
-                        
-                        
-                        Text("\(driver.revenue) DA")
-                            .font(.system(size: 22, weight: .heavy))
-                        
-                    }
-                    .padding()
-                    .padding(.horizontal)
-                    .background(Color.yaDarkPurple)
-                    .foregroundStyle(.white)
-                    .clipShape(Capsule())
-                    Spacer()
                     
-                    Toggle(statusTitle, isOn: $isOnline)
-                        .font(.system(size: 17, weight: .bold))
+                    VStack(spacing: 0){
+                        VStack{
+                            Text("Revenus du jour")
+                                .font(.system(size: 14, weight: .regular))
+                            
+                            
+                            Text("\(driver.revenue) DA")
+                                .font(.system(size: 22, weight: .heavy))
+                            
+                        }
                         .padding()
-                        .onChange(of: isOnline) { _, newValue in
-                            viewModel.updateDriverOnline(isOnline: newValue)
-                        }
-                        .onChange(of: driver.isOnline) { _, newValue in
-                            isOnline = newValue
-                        }
-                        .background(.white)
-                        .clipShape(
-                            .rect(
-                                topLeadingRadius: 20,
-                                bottomLeadingRadius: 0,
-                                bottomTrailingRadius: 0,
-                                topTrailingRadius: 20
+                        .padding(.horizontal)
+                        .background(Color.yaDarkPurple)
+                        .foregroundStyle(.white)
+                        .clipShape(Capsule())
+                        Spacer()
+                        
+                        Toggle(statusTitle, isOn: $isOnline)
+                            .font(.system(size: 17, weight: .bold))
+                            .padding()
+                            .onChange(of: isOnline) { _, newValue in
+                                viewModel.updateDriverOnline(isOnline: newValue)
+                            }
+                            .onChange(of: driver.isOnline) { _, newValue in
+                                isOnline = newValue
+                            }
+                            .background(.white)
+                            .clipShape(
+                                .rect(
+                                    topLeadingRadius: 20,
+                                    bottomLeadingRadius: 0,
+                                    bottomTrailingRadius: 0,
+                                    topTrailingRadius: 20
+                                )
                             )
-                        )
-                    
-                    if let tripRequestId = driver.tripRequestId {
-                        TripRequestSheet(id: tripRequestId)
+                        
+                        if let tripRequestId = driver.tripRequestId {
+                            TripRequestSheet(id: tripRequestId)
+                        }
                     }
                 }
-            }
-            .tabItem { 
-                Label {
-                    Text("Status")
-                } icon: {
-                    Image("ic_power")
+                .tabItem {
+                    Label {
+                        Text("Status")
+                    } icon: {
+                        Image("ic_power")
+                    }
                 }
+                .toolbarBackground(.white, for: .tabBar)
             }
-            .toolbarBackground(.white, for: .tabBar)
             
             ZStack {
                 

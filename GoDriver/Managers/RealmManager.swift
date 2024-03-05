@@ -20,7 +20,7 @@ class RealmManager: ObservableObject {
         
         do {
             guard var flexSyncConfig = app.currentUser?.flexibleSyncConfiguration() else { return }
-            flexSyncConfig.objectTypes = [Driver.self, Trip.self]
+            flexSyncConfig.objectTypes = [Driver.self, Trip.self, Rider.self]
             flexSyncConfig.schemaVersion = 0
             
             let realm = try await Realm(configuration: flexSyncConfig)
@@ -37,12 +37,20 @@ class RealmManager: ObservableObject {
                     subscriptions.append(QuerySubscription<Driver>(name: "userDriver"))
                 }
                 
-                if let tripSub = subscriptions.first(named: "driverTrips") {
+                if let tripSub = subscriptions.first(named: "driverTrip") {
                     print("Replacing subscription for driverTrips")
                     tripSub.updateQuery(toType: Trip.self)
                 } else {
-                    print("Appending subscription for driverTrips")
-                    subscriptions.append(QuerySubscription<Trip>(name: "driverTrips"))
+                    print("Appending subscription for driverTrip")
+                    subscriptions.append(QuerySubscription<Trip>(name: "driverTrip"))
+                }
+                
+                if let tripSub = subscriptions.first(named: "driverTripRider") {
+                    print("Replacing subscription for driverTrips")
+                    tripSub.updateQuery(toType: Rider.self)
+                } else {
+                    print("Appending subscription for driverTripRider")
+                    subscriptions.append(QuerySubscription<Rider>(name: "driverTripRider"))
                 }
             }
             print("Successfully opened realm: \(realm)")
@@ -89,15 +97,5 @@ class RealmManager: ObservableObject {
     @MainActor
     func getTrip(id: ObjectId) throws -> Trip? {
         return self.realm?.object(ofType: Trip.self, forPrimaryKey: id)
-    }
-    
-    @MainActor
-    func createTrip() throws {
-        
-        let newTrip = Trip(id: ObjectId("65e7638152e9471b77904173"))
-        
-        try realm?.write {
-            self.realm?.add(newTrip)
-        }
     }
 }

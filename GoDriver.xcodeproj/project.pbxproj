@@ -36,6 +36,8 @@
 		9982BBEA2B9704970021FB1C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBE92B9704970021FB1C /* String.swift */; };
 		9982BBED2B9709920021FB1C /* ProfileTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBEC2B9709920021FB1C /* ProfileTextField.swift */; };
 		9982BBEF2B976D580021FB1C /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBEE2B976D580021FB1C /* ProgressBar.swift */; };
+		9982BBF22B97B4550021FB1C /* TripFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBF12B97B4550021FB1C /* TripFlowView.swift */; };
+		9982BBF42B97B5400021FB1C /* TripInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBF32B97B5400021FB1C /* TripInfoCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,8 @@
 		9982BBE92B9704970021FB1C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		9982BBEC2B9709920021FB1C /* ProfileTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextField.swift; sourceTree = "<group>"; };
 		9982BBEE2B976D580021FB1C /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		9982BBF12B97B4550021FB1C /* TripFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFlowView.swift; sourceTree = "<group>"; };
+		9982BBF32B97B5400021FB1C /* TripInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripInfoCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,7 @@
 				99368E052B95FA81000FC901 /* Login */,
 				99368E042B95E563000FC901 /* Home */,
 				99368E0A2B9612E5000FC901 /* TripRequest */,
+				9982BBF02B97B4330021FB1C /* TripFlow */,
 				9982BBE62B968B1B0021FB1C /* Profile */,
 			);
 			path = Views;
@@ -208,8 +213,17 @@
 			children = (
 				9982BBEC2B9709920021FB1C /* ProfileTextField.swift */,
 				9982BBEE2B976D580021FB1C /* ProgressBar.swift */,
+				9982BBF32B97B5400021FB1C /* TripInfoCard.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		9982BBF02B97B4330021FB1C /* TripFlow */ = {
+			isa = PBXGroup;
+			children = (
+				9982BBF12B97B4550021FB1C /* TripFlowView.swift */,
+			);
+			path = TripFlow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,9 +320,11 @@
 				99368DF92B95D7CB000FC901 /* Driver.swift in Sources */,
 				911F548827C6A2BC005D4876 /* AppConfig.swift in Sources */,
 				99368E012B95E4E1000FC901 /* HomeView.swift in Sources */,
+				9982BBF22B97B4550021FB1C /* TripFlowView.swift in Sources */,
 				9982BBE82B968B460021FB1C /* ProfileViewModel.swift in Sources */,
 				9982BBED2B9709920021FB1C /* ProfileTextField.swift in Sources */,
 				68D3DF5A2942677E005209D9 /* Constants.swift in Sources */,
+				9982BBF42B97B5400021FB1C /* TripInfoCard.swift in Sources */,
 				99368DFB2B95D7E9000FC901 /* DriverStatus.swift in Sources */,
 				9982BBE52B968B120021FB1C /* ProfileView.swift in Sources */,
 				9982BBEA2B9704970021FB1C /* String.swift in Sources */,

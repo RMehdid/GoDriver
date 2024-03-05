@@ -75,8 +75,8 @@ struct TripRequestSheet: View {
                     }
                     .buttonStyle(PlainButtonStyle())
                     
-                    Button{
-                        viewModel.acceptTrip(tripId: tripId)
+                    NavigationLink {
+                        TripFlowView()
                     } label: {
                         Text("Accept")
                             .font(.system(size: 14, weight: .semibold))
@@ -86,7 +86,9 @@ struct TripRequestSheet: View {
                             .clipShape(.capsule)
                             .foregroundColor(.white)
                     }
-                    .buttonStyle(PlainButtonStyle())
+                    .onTapGesture {
+                        viewModel.acceptTrip(tripId: tripId)
+                    }
                 }
             }
             .padding()

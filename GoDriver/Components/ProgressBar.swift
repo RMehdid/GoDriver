@@ -13,11 +13,11 @@ struct ProgressBar: View {
     
     @State private var progress: CGFloat = 0
     
-    private let timer = Timer.publish(every: 0.1, on: .current, in: .tracking).autoconnect()
+    private let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         GeometryReader { proxy in
-            ZStack{
+            ZStack(alignment: .leading){
                 RoundedRectangle(cornerRadius: .infinity)
                     .frame(height: 2)
                     .frame(maxWidth: .infinity)
