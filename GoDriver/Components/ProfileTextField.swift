@@ -39,7 +39,7 @@ struct ProfileTextFieldStyle: TextFieldStyle {
                 }
             }
             .padding(14)
-            .background(Color(red: 237/255, green: 234/255, blue: 241/255))
+            .background(Color(red: 237/255, green: 234/255, blue: 241/255).cornerRadius(8))
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
                     .stroke(Color(red: 217/255, green: 213/255, blue: 226/255), lineWidth: 2)

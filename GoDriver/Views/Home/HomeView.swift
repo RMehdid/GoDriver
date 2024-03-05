@@ -118,7 +118,7 @@ struct HomeView: View {
             }
             
             ZStack {
-                
+                ProfileView(driver: driver)
             }
             .tabItem {
                 Label {
@@ -133,6 +133,6 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(driver: Driver())
+    HomeView(driver:  Driver(id: "10202", fullname: "Samy H"))
 }
 
