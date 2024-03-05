@@ -13,6 +13,8 @@ struct TripFlowView: View {
     
     @ObservedRealmObject var trip: Trip
     
+    @StateObject private var viewModel = ViewModel()
+    
     var buttonTitle: String {
         switch trip.status {
         case .accepted:
@@ -24,6 +26,23 @@ struct TripFlowView: View {
         case .toDestination:
             return "Finish Ride"
         default: return ""
+        }
+    }
+    
+    var nextStatus: TripStatus {
+        switch trip.status {
+        case .pending:
+            return .accepted
+        case .accepted:
+            return .toClient
+        case .toClient:
+            return .arrivedClient
+        case .arrivedClient:
+            return .toDestination
+        case .toDestination:
+            return .arrivedDestination
+        case .arrivedDestination:
+            return .arrivedDestination
         }
     }
     
@@ -61,6 +80,16 @@ struct TripFlowView: View {
                             .clipShape(.circle)
                     }
                     
+                    Button {
+                        viewModel.updateTripStatus(trip: trip, status: nextStatus)
+                    } label: {
+                        Text(buttonTitle)
+                            .font(.system(size: 17, weight: .bold))
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 16)
+                            .background(Color.yaPurple)
+                            .cornerRadius(8)
+                    }
                     
                 }
             }

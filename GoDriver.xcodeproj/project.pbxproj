@@ -38,6 +38,7 @@
 		9982BBEF2B976D580021FB1C /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBEE2B976D580021FB1C /* ProgressBar.swift */; };
 		9982BBF22B97B4550021FB1C /* TripFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBF12B97B4550021FB1C /* TripFlowView.swift */; };
 		9982BBF42B97B5400021FB1C /* TripInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBF32B97B5400021FB1C /* TripInfoCard.swift */; };
+		9982BBF62B97C95E0021FB1C /* TripFlowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBF52B97C95E0021FB1C /* TripFlowViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		9982BBEE2B976D580021FB1C /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		9982BBF12B97B4550021FB1C /* TripFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFlowView.swift; sourceTree = "<group>"; };
 		9982BBF32B97B5400021FB1C /* TripInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripInfoCard.swift; sourceTree = "<group>"; };
+		9982BBF52B97C95E0021FB1C /* TripFlowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFlowViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				9982BBF12B97B4550021FB1C /* TripFlowView.swift */,
+				9982BBF52B97C95E0021FB1C /* TripFlowViewModel.swift */,
 			);
 			path = TripFlow;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				99368E012B95E4E1000FC901 /* HomeView.swift in Sources */,
 				9982BBF22B97B4550021FB1C /* TripFlowView.swift in Sources */,
 				9982BBE82B968B460021FB1C /* ProfileViewModel.swift in Sources */,
+				9982BBF62B97C95E0021FB1C /* TripFlowViewModel.swift in Sources */,
 				9982BBED2B9709920021FB1C /* ProfileTextField.swift in Sources */,
 				68D3DF5A2942677E005209D9 /* Constants.swift in Sources */,
 				9982BBF42B97B5400021FB1C /* TripInfoCard.swift in Sources */,

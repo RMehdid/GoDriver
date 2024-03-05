@@ -76,7 +76,9 @@ struct TripRequestSheet: View {
                     .buttonStyle(PlainButtonStyle())
                     
                     NavigationLink {
-                        TripFlowView()
+                        if let trip = viewModel.trip {
+                            TripFlowView(trip: trip)
+                        }
                     } label: {
                         Text("Accept")
                             .font(.system(size: 14, weight: .semibold))
