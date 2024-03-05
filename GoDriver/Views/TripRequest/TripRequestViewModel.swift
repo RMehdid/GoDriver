@@ -11,7 +11,7 @@ import RealmSwift
 extension TripRequestSheet {
     class ViewModel: ObservableObject {
         
-        @Published var trip: Trip?
+        @ObservedRealmObject var trip: Trip = Trip()
         
         let realmManager = RealmManager.shared
         
