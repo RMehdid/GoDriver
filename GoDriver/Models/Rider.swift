@@ -10,7 +10,7 @@ import RealmSwift
 
 class Rider: Object, ObjectKeyIdentifiable {
     
-    @Persisted(primaryKey: true) var _id: ObjectId
+    @Persisted(primaryKey: true) var _id: String
     
     @Persisted var fullname: String
     

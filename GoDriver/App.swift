@@ -1,5 +1,6 @@
 import SwiftUI
 import RealmSwift
+import BackgroundTasks
 
 /// This method loads app config details from a atlasConfig.plist we generate
 /// for the template apps.
@@ -14,6 +15,8 @@ let app = App(id: theAppConfig.appId, configuration: AppConfiguration(baseURL: t
 @main
 struct GoDriverApp: SwiftUI.App {
 
+    @Environment(\.scenePhase) var phase
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -21,5 +24,22 @@ struct GoDriverApp: SwiftUI.App {
                     Logger.shared.level = .debug
                 }
         }
+        .onChange(of: phase) { _, newPhase in
+            switch newPhase {
+            case .background: scheduleAppRefresh()
+            default: break
+            }
+        }
+        .backgroundTask(.appRefresh("background_refresh")) {
+            await RealmManager.shared.initialize()
+        }
     }
+    
+    private func scheduleAppRefresh() {
+        let backgroundTask = BGAppRefreshTaskRequest(identifier: "background_refresh")
+        backgroundTask.earliestBeginDate = .now.addingTimeInterval(10)
+        try? BGTaskScheduler.shared.submit(backgroundTask)
+        print("Successfully scheduled a background task")
+        
+      }
 }

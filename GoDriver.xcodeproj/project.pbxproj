@@ -44,6 +44,8 @@
 		9982BBFD2B9871B50021FB1C /* TripHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBFC2B9871B50021FB1C /* TripHistoryViewModel.swift */; };
 		9982BBFF2B9876160021FB1C /* TripHistoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBFE2B9876160021FB1C /* TripHistoryCard.swift */; };
 		9982BC012B987B1D0021FB1C /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BC002B987B1D0021FB1C /* Date.swift */; };
+		9982BC042B98A1190021FB1C /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BC032B98A1190021FB1C /* Realm.swift */; };
+		9982BC062B98A1CB0021FB1C /* SyncSubscriptionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BC052B98A1CB0021FB1C /* SyncSubscriptionSet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,9 @@
 		9982BBFC2B9871B50021FB1C /* TripHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryViewModel.swift; sourceTree = "<group>"; };
 		9982BBFE2B9876160021FB1C /* TripHistoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryCard.swift; sourceTree = "<group>"; };
 		9982BC002B987B1D0021FB1C /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		9982BC022B98923B0021FB1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9982BC032B98A1190021FB1C /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
+		9982BC052B98A1CB0021FB1C /* SyncSubscriptionSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncSubscriptionSet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +123,7 @@
 		913D46492770E46800ABE7D3 /* GoDriver */ = {
 			isa = PBXGroup;
 			children = (
+				9982BC022B98923B0021FB1C /* Info.plist */,
 				99368E062B95FA8D000FC901 /* Managers */,
 				9982BBEB2B9709170021FB1C /* Components */,
 				99495BB72B90C9DB00D726CC /* Extensions */,
@@ -206,10 +212,9 @@
 		99495BB72B90C9DB00D726CC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				99495BB52B90C9D600D726CC /* Color.swift */,
-				9982BBE92B9704970021FB1C /* String.swift */,
-				9982BBF72B9866C70021FB1C /* Double.swift */,
-				9982BC002B987B1D0021FB1C /* Date.swift */,
+				9982BC092B98ACDE0021FB1C /* SwiftUI */,
+				9982BC082B98ACD60021FB1C /* Foundation */,
+				9982BC072B98ACCB0021FB1C /* Realm */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -250,6 +255,33 @@
 				9982BBFC2B9871B50021FB1C /* TripHistoryViewModel.swift */,
 			);
 			path = TripHistory;
+			sourceTree = "<group>";
+		};
+		9982BC072B98ACCB0021FB1C /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				9982BC032B98A1190021FB1C /* Realm.swift */,
+				9982BC052B98A1CB0021FB1C /* SyncSubscriptionSet.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		9982BC082B98ACD60021FB1C /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				9982BBE92B9704970021FB1C /* String.swift */,
+				9982BBF72B9866C70021FB1C /* Double.swift */,
+				9982BC002B987B1D0021FB1C /* Date.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		9982BC092B98ACDE0021FB1C /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				99495BB52B90C9D600D726CC /* Color.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,11 +386,13 @@
 				9982BBF62B97C95E0021FB1C /* TripFlowViewModel.swift in Sources */,
 				9982BBED2B9709920021FB1C /* ProfileTextField.swift in Sources */,
 				68D3DF5A2942677E005209D9 /* Constants.swift in Sources */,
+				9982BC042B98A1190021FB1C /* Realm.swift in Sources */,
 				9982BBF42B97B5400021FB1C /* TripInfoCard.swift in Sources */,
 				9982BBFD2B9871B50021FB1C /* TripHistoryViewModel.swift in Sources */,
 				99368DFB2B95D7E9000FC901 /* DriverStatus.swift in Sources */,
 				9982BBE52B968B120021FB1C /* ProfileView.swift in Sources */,
 				9982BC012B987B1D0021FB1C /* Date.swift in Sources */,
+				9982BC062B98A1CB0021FB1C /* SyncSubscriptionSet.swift in Sources */,
 				9982BBEA2B9704970021FB1C /* String.swift in Sources */,
 				913D464B2770E46800ABE7D3 /* App.swift in Sources */,
 				99368DFD2B95DA33000FC901 /* LoginViewModel.swift in Sources */,
@@ -497,6 +531,7 @@
 				DEVELOPMENT_TEAM = QH3T53K3KZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoDriver/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -528,6 +563,7 @@
 				DEVELOPMENT_TEAM = QH3T53K3KZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoDriver/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -23,36 +23,10 @@ class RealmManager: ObservableObject {
             flexSyncConfig.objectTypes = [Driver.self, Trip.self, Rider.self]
             flexSyncConfig.schemaVersion = 0
             
-            let realm = try await Realm(configuration: flexSyncConfig)
+            var realm = try await Realm(configuration: flexSyncConfig)
             
+            try await realm.setSubscriptions()
             
-            let subscriptions = realm.subscriptions
-            
-            try await subscriptions.update {
-                if let selfSub = subscriptions.first(named: "userDriver") {
-                    print("Replacing subscription for userDriver")
-                    selfSub.updateQuery(toType: Driver.self)
-                } else {
-                    print("Appending subscription for userDriver")
-                    subscriptions.append(QuerySubscription<Driver>(name: "userDriver"))
-                }
-                
-                if let tripSub = subscriptions.first(named: "driverTrip") {
-                    print("Replacing subscription for driverTrips")
-                    tripSub.updateQuery(toType: Trip.self)
-                } else {
-                    print("Appending subscription for driverTrip")
-                    subscriptions.append(QuerySubscription<Trip>(name: "driverTrip"))
-                }
-                
-                if let riderSub = subscriptions.first(named: "driverTripRider") {
-                    print("Replacing subscription for driverTrips")
-                    riderSub.updateQuery(toType: Rider.self)
-                } else {
-                    print("Appending subscription for driverTripRider")
-                    subscriptions.append(QuerySubscription<Rider>(name: "driverTripRider"))
-                }
-            }
             print("Successfully opened realm: \(realm)")
             
             self.realm = realm
@@ -80,7 +54,7 @@ class RealmManager: ObservableObject {
     func createDriver() throws {
         guard let id = app.currentUser?.id else { return }
         
-        let newDriver = Driver(id: try ObjectId(string: id), fullname: "Samy Mehdid")
+        let newDriver = Driver(id: id, fullname: "Samy Mehdid")
         
         try realm?.write {
             self.realm?.add(newDriver)
@@ -91,7 +65,9 @@ class RealmManager: ObservableObject {
     func getDriver() throws {
         guard let id = app.currentUser?.id else { return }
         
-        self.driver = self.realm?.object(ofType: Driver.self, forPrimaryKey: try ObjectId(string: id))
+        self.driver = self.realm?.object(ofType: Driver.self, forPrimaryKey: id)
+        
+        debugPrint(driver)
     }
     
     @MainActor
@@ -99,12 +75,12 @@ class RealmManager: ObservableObject {
         return self.realm?.object(ofType: Trip.self, forPrimaryKey: id)
     }
     
-    @MainActor
-    func createTrip() throws {
-        let newTrip = Trip()
-        
-        try realm?.write {
-            self.realm?.add(newTrip)
-        }
-    }
+//    @MainActor
+//    func createTrip() throws {
+//        let newTrip = Trip()
+//        
+//        try realm?.write {
+//            self.realm?.add(newTrip)
+//        }
+//    }
 }
