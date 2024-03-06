@@ -72,6 +72,7 @@ struct TripFlowView: View {
                                     .frame(width: 16, height: 16)
                                 
                                 Text("4.5")
+                                    .font(.system(size: 14, weight: .regular))
                             }
                         }
                         
