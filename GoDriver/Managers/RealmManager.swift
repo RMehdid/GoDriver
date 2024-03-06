@@ -45,9 +45,9 @@ class RealmManager: ObservableObject {
                     subscriptions.append(QuerySubscription<Trip>(name: "driverTrip"))
                 }
                 
-                if let tripSub = subscriptions.first(named: "driverTripRider") {
+                if let riderSub = subscriptions.first(named: "driverTripRider") {
                     print("Replacing subscription for driverTrips")
-                    tripSub.updateQuery(toType: Rider.self)
+                    riderSub.updateQuery(toType: Rider.self)
                 } else {
                     print("Appending subscription for driverTripRider")
                     subscriptions.append(QuerySubscription<Rider>(name: "driverTripRider"))

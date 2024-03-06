@@ -25,19 +25,20 @@ struct TripInfoCard: View {
     }
     
     var body: some View {
-        VStack(spacing: 8){
+        VStack(spacing: 16){
             HStack(alignment: .top){
                 Image("ic_circle")
                     .resizable()
                     .frame(width: 16, height: 16)
                 
-                VStack {
+                VStack(alignment: .leading){
                     Text(progressTitles.0)
                         .font(.system(size: 17, weight: .bold))
                         .foregroundStyle(.white)
                     
                     Text(progressTitles.1)
                         .font(.system(size: 17, weight: .regular))
+                        .foregroundStyle(Color(red: 217 / 255, green: 213 / 255, blue: 226 / 255))
                 }
                 
                 Spacer()
@@ -49,6 +50,7 @@ struct TripInfoCard: View {
                         label("5,7 km")
                     }
                 }
+                .foregroundStyle(.white)
             }
             
             HStack(spacing: 8){

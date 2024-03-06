@@ -78,6 +78,7 @@ struct TripRequestSheet: View {
                     NavigationLink {
                         if let trip = viewModel.trip {
                             TripFlowView(trip: trip)
+                                .toolbar(.hidden, for: .tabBar)
                         }
                     } label: {
                         Text("Accept")

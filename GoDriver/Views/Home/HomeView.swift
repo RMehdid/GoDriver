@@ -35,8 +35,8 @@ struct HomeView: View {
     }
     
     var body: some View {
-        TabView {
-            NavigationStack {
+        NavigationStack {
+            TabView {
                 ZStack(alignment: .bottom){
                     Map(initialPosition: .automatic)
                         .overlay {
@@ -95,38 +95,38 @@ struct HomeView: View {
                     }
                 }
                 .toolbarBackground(.white, for: .tabBar)
-            }
-            
-            ZStack {
                 
-            }
-            .tabItem {
-                Label {
-                    Text("Courses")
-                } icon: {
-                    Image("ic_pin")
+                ZStack {
+                    
                 }
-            }
-            
-            ZStack{
+                .tabItem {
+                    Label {
+                        Text("Courses")
+                    } icon: {
+                        Image("ic_pin")
+                    }
+                }
                 
-            }
-            .tabItem {
-                Label {
-                    Text("Revenue")
-                } icon: {
-                    Image("ic_coins")
+                ZStack{
+                    
                 }
-            }
-            
-            ZStack {
-                ProfileView(driver: driver)
-            }
-            .tabItem {
-                Label {
-                    Text("Plus")
-                } icon: {
-                    Image("ic_burger")
+                .tabItem {
+                    Label {
+                        Text("Revenue")
+                    } icon: {
+                        Image("ic_coins")
+                    }
+                }
+                
+                ZStack {
+                    ProfileView(driver: driver)
+                }
+                .tabItem {
+                    Label {
+                        Text("Plus")
+                    } icon: {
+                        Image("ic_burger")
+                    }
                 }
             }
         }

@@ -52,16 +52,19 @@ struct TripFlowView: View {
             
             VStack {
                 TripInfoCard(trip: trip)
+                    .padding()
                 
                 Spacer()
                 
-                VStack{
+                VStack(spacing: 24){
                     HStack {
                         Circle()
                             .frame(width: 40, height: 40)
                         
-                        VStack {
-                            Text(trip.rider.fullname)
+                        VStack(alignment: .leading){
+                            if let rider = trip.rider {
+                                Text(rider.fullname)
+                            }
                             
                             HStack {
                                 Image("ic_star")
@@ -72,12 +75,19 @@ struct TripFlowView: View {
                             }
                         }
                         
-                        Image(systemName: "phone.fill")
-                            .resizable()
-                            .frame(width: 18, height: 18)
-                            .padding(15)
-                            .background(Color.green)
-                            .clipShape(.circle)
+                        Spacer()
+                        
+                        Button {
+                            // implement call function
+                        } label: {
+                            Image(systemName: "phone.fill")
+                                .resizable()
+                                .frame(width: 18, height: 18)
+                                .padding(15)
+                                .background(Color.green)
+                                .clipShape(.circle)
+                                .foregroundStyle(.white)
+                        }
                     }
                     
                     Button {
@@ -85,15 +95,30 @@ struct TripFlowView: View {
                     } label: {
                         Text(buttonTitle)
                             .font(.system(size: 17, weight: .bold))
+                            .foregroundStyle(Color.white)
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 16)
                             .background(Color.yaPurple)
                             .cornerRadius(8)
                     }
+                    .buttonStyle(PlainButtonStyle())
                     
                 }
+                .padding()
+                .padding(.bottom, 32)
+                .background(Color.white)
+                .clipShape(
+                    .rect(
+                        topLeadingRadius: 16,
+                        bottomLeadingRadius: 0,
+                        bottomTrailingRadius: 0,
+                        topTrailingRadius: 16
+                    )
+                )
             }
+            .ignoresSafeArea(.all, edges: .bottom)
         }
+        .navigationBarBackButtonHidden()
     }
 }
 

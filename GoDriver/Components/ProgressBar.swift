@@ -32,6 +32,8 @@ struct ProgressBar: View {
                     .foregroundStyle(Color(red: 99 / 255, green: 22 / 255, blue: 219 / 255))
             }
             .onReceive(timer) { _ in
+                guard progress >= (proxy.size.width / CGFloat((secondsAlive * 10))) else { return }
+                
                 progress -= (proxy.size.width / CGFloat((secondsAlive * 10)))
             }
         }
