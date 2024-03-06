@@ -29,7 +29,7 @@ struct TripFlowView: View {
         }
     }
     
-    var nextStatus: TripStatus {
+    var nextStatus: Trip.Status {
         switch trip.status {
         case .pending:
             return .accepted

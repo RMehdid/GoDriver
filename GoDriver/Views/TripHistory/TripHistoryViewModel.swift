@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+extension TripHistoryView {
+    class ViewModel: ObservableObject {
+        
+    }
+}

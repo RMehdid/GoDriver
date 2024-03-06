@@ -6,13 +6,23 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct TripHistoryView: View {
+    
+    @ObservedRealmObject var trips: RealmSwift.List<Trip>
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 16){
+            ScrollView(showsIndicators: false) {
+                ForEach(trips) { trip in
+                    TripHistoryCard(trip: trip)
+                }
+            }
+        }
     }
 }
 
 #Preview {
-    TripHistoryView()
+    TripHistoryView(trips: .init())
 }

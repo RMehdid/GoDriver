@@ -63,34 +63,36 @@ struct TripRequestSheet: View {
                 HStack {
                     Spacer()
                     
-                    Button {
-                        viewModel.rejectTrip(tripId: tripId)
-                    } label: {
-                        Image(systemName: "multiply")
-                            .padding(12)
-                            .overlay {
-                                Circle()
-                                    .stroke(Color(red: 237 / 255, green: 234 / 255, blue: 241 / 255), lineWidth: 1)
-                            }
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                    
-                    NavigationLink {
-                        if let trip = viewModel.trip {
+                    if let trip = viewModel.trip {
+                        
+                        Button {
+                            viewModel.rejectTrip(tripId: tripId)
+                        } label: {
+                            Image(systemName: "multiply")
+                                .padding(12)
+                                .overlay {
+                                    Circle()
+                                        .stroke(Color(red: 237 / 255, green: 234 / 255, blue: 241 / 255), lineWidth: 1)
+                                }
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        
+                        
+                        NavigationLink {
                             TripFlowView(trip: trip)
                                 .toolbar(.hidden, for: .tabBar)
+                        } label: {
+                            Text("Accept")
+                                .font(.system(size: 14, weight: .semibold))
+                                .padding(.vertical, 12)
+                                .padding(.horizontal, 16)
+                                .background(Color(red: 99 / 255, green: 22 / 255, blue: 219 / 255))
+                                .clipShape(.capsule)
+                                .foregroundColor(.white)
                         }
-                    } label: {
-                        Text("Accept")
-                            .font(.system(size: 14, weight: .semibold))
-                            .padding(.vertical, 12)
-                            .padding(.horizontal, 16)
-                            .background(Color(red: 99 / 255, green: 22 / 255, blue: 219 / 255))
-                            .clipShape(.capsule)
-                            .foregroundColor(.white)
-                    }
-                    .onTapGesture {
-                        viewModel.acceptTrip(tripId: tripId)
+                        .onTapGesture {
+                            viewModel.acceptTrip(tripId: tripId)
+                        }
                     }
                 }
             }

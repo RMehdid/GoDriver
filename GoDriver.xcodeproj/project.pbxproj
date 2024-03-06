@@ -40,6 +40,10 @@
 		9982BBF42B97B5400021FB1C /* TripInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBF32B97B5400021FB1C /* TripInfoCard.swift */; };
 		9982BBF62B97C95E0021FB1C /* TripFlowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBF52B97C95E0021FB1C /* TripFlowViewModel.swift */; };
 		9982BBF82B9866C70021FB1C /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBF72B9866C70021FB1C /* Double.swift */; };
+		9982BBFA2B9871980021FB1C /* TripHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBF92B9871980021FB1C /* TripHistoryView.swift */; };
+		9982BBFD2B9871B50021FB1C /* TripHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBFC2B9871B50021FB1C /* TripHistoryViewModel.swift */; };
+		9982BBFF2B9876160021FB1C /* TripHistoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBFE2B9876160021FB1C /* TripHistoryCard.swift */; };
+		9982BC012B987B1D0021FB1C /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BC002B987B1D0021FB1C /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +79,10 @@
 		9982BBF32B97B5400021FB1C /* TripInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripInfoCard.swift; sourceTree = "<group>"; };
 		9982BBF52B97C95E0021FB1C /* TripFlowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFlowViewModel.swift; sourceTree = "<group>"; };
 		9982BBF72B9866C70021FB1C /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		9982BBF92B9871980021FB1C /* TripHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryView.swift; sourceTree = "<group>"; };
+		9982BBFC2B9871B50021FB1C /* TripHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryViewModel.swift; sourceTree = "<group>"; };
+		9982BBFE2B9876160021FB1C /* TripHistoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripHistoryCard.swift; sourceTree = "<group>"; };
+		9982BC002B987B1D0021FB1C /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +151,7 @@
 				99368E0A2B9612E5000FC901 /* TripRequest */,
 				9982BBF02B97B4330021FB1C /* TripFlow */,
 				9982BBE62B968B1B0021FB1C /* Profile */,
+				9982BBFB2B98719C0021FB1C /* TripHistory */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +209,7 @@
 				99495BB52B90C9D600D726CC /* Color.swift */,
 				9982BBE92B9704970021FB1C /* String.swift */,
 				9982BBF72B9866C70021FB1C /* Double.swift */,
+				9982BC002B987B1D0021FB1C /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -219,6 +229,7 @@
 				9982BBEC2B9709920021FB1C /* ProfileTextField.swift */,
 				9982BBEE2B976D580021FB1C /* ProgressBar.swift */,
 				9982BBF32B97B5400021FB1C /* TripInfoCard.swift */,
+				9982BBFE2B9876160021FB1C /* TripHistoryCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -230,6 +241,15 @@
 				9982BBF52B97C95E0021FB1C /* TripFlowViewModel.swift */,
 			);
 			path = TripFlow;
+			sourceTree = "<group>";
+		};
+		9982BBFB2B98719C0021FB1C /* TripHistory */ = {
+			isa = PBXGroup;
+			children = (
+				9982BBF92B9871980021FB1C /* TripHistoryView.swift */,
+				9982BBFC2B9871B50021FB1C /* TripHistoryViewModel.swift */,
+			);
+			path = TripHistory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99368E032B95E541000FC901 /* HomeViewModel.swift in Sources */,
+				9982BBFF2B9876160021FB1C /* TripHistoryCard.swift in Sources */,
 				917097DE27A05F0000F1D65B /* OpenRealmView.swift in Sources */,
 				9982BBE32B963ACF0021FB1C /* Rider.swift in Sources */,
 				99368DFF2B95DA92000FC901 /* UiState.swift in Sources */,
@@ -323,6 +344,7 @@
 				9982BBEF2B976D580021FB1C /* ProgressBar.swift in Sources */,
 				99368E082B9612D4000FC901 /* TripRequestView.swift in Sources */,
 				99368DF62B95C75B000FC901 /* RealmManager.swift in Sources */,
+				9982BBFA2B9871980021FB1C /* TripHistoryView.swift in Sources */,
 				9982BBE12B9624540021FB1C /* Trip.swift in Sources */,
 				99368DF92B95D7CB000FC901 /* Driver.swift in Sources */,
 				911F548827C6A2BC005D4876 /* AppConfig.swift in Sources */,
@@ -333,8 +355,10 @@
 				9982BBED2B9709920021FB1C /* ProfileTextField.swift in Sources */,
 				68D3DF5A2942677E005209D9 /* Constants.swift in Sources */,
 				9982BBF42B97B5400021FB1C /* TripInfoCard.swift in Sources */,
+				9982BBFD2B9871B50021FB1C /* TripHistoryViewModel.swift in Sources */,
 				99368DFB2B95D7E9000FC901 /* DriverStatus.swift in Sources */,
 				9982BBE52B968B120021FB1C /* ProfileView.swift in Sources */,
+				9982BC012B987B1D0021FB1C /* Date.swift in Sources */,
 				9982BBEA2B9704970021FB1C /* String.swift in Sources */,
 				913D464B2770E46800ABE7D3 /* App.swift in Sources */,
 				99368DFD2B95DA33000FC901 /* LoginViewModel.swift in Sources */,

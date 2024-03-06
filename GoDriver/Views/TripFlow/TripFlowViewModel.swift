@@ -15,7 +15,7 @@ extension TripFlowView {
         let realmManager = RealmManager.shared
         
         @MainActor
-        func updateTripStatus(trip: Trip, status: TripStatus) {
+        func updateTripStatus(trip: Trip, status: Trip.Status) {
             
             do {
                 try realmManager.realm?.write {
