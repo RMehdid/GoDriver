@@ -9,15 +9,24 @@ import Foundation
 import RealmSwift
 
 class Driver: Object, ObjectKeyIdentifiable {
+    
     @Persisted(primaryKey: true) var _id: String
     
     @Persisted var fullname: String
+    
     @Persisted var tripRequestId: ObjectId?
+    
     @Persisted var currentTripId: ObjectId?
+    
     @Persisted var isOnline: Bool
+    
     @Persisted var revenue: Int
+    
     @Persisted var profileImageUrl: String?
+    
     @Persisted var phoneNumber: String
+    
+    @Persisted var rating: Double
     
     convenience init(id: String, fullname: String) {
         self.init()
@@ -29,5 +38,6 @@ class Driver: Object, ObjectKeyIdentifiable {
         self.revenue = 0
         self.profileImageUrl = nil
         self.phoneNumber = "+213540408051"
+        self.rating = 5
     }
 }

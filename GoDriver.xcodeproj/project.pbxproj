@@ -39,6 +39,7 @@
 		9982BBF22B97B4550021FB1C /* TripFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBF12B97B4550021FB1C /* TripFlowView.swift */; };
 		9982BBF42B97B5400021FB1C /* TripInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBF32B97B5400021FB1C /* TripInfoCard.swift */; };
 		9982BBF62B97C95E0021FB1C /* TripFlowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBF52B97C95E0021FB1C /* TripFlowViewModel.swift */; };
+		9982BBF82B9866C70021FB1C /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BBF72B9866C70021FB1C /* Double.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		9982BBF12B97B4550021FB1C /* TripFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFlowView.swift; sourceTree = "<group>"; };
 		9982BBF32B97B5400021FB1C /* TripInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripInfoCard.swift; sourceTree = "<group>"; };
 		9982BBF52B97C95E0021FB1C /* TripFlowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFlowViewModel.swift; sourceTree = "<group>"; };
+		9982BBF72B9866C70021FB1C /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			children = (
 				99495BB52B90C9D600D726CC /* Color.swift */,
 				9982BBE92B9704970021FB1C /* String.swift */,
+				9982BBF72B9866C70021FB1C /* Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				913D46622770F0C600ABE7D3 /* LoginView.swift in Sources */,
 				99368E0C2B9612F5000FC901 /* TripRequestViewModel.swift in Sources */,
 				913D464D2770E46800ABE7D3 /* ContentView.swift in Sources */,
+				9982BBF82B9866C70021FB1C /* Double.swift in Sources */,
 				99495BB62B90C9D600D726CC /* Color.swift in Sources */,
 				9982BBEF2B976D580021FB1C /* ProgressBar.swift in Sources */,
 				99368E082B9612D4000FC901 /* TripRequestView.swift in Sources */,

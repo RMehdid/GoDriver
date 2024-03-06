@@ -15,4 +15,8 @@ class Rider: Object, ObjectKeyIdentifiable {
     @Persisted var fullname: String
     
     @Persisted var profileImageUrl: String
+    
+    @Persisted var phoneNumber: String
+    
+    @Persisted var rating: Double
 }

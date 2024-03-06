@@ -57,37 +57,42 @@ struct TripFlowView: View {
                 Spacer()
                 
                 VStack(spacing: 24){
-                    HStack {
-                        Circle()
-                            .frame(width: 40, height: 40)
-                        
-                        VStack(alignment: .leading){
-                            if let rider = trip.rider {
+                    if let rider = trip.rider {
+                        HStack {
+                            Circle()
+                                .frame(width: 40, height: 40)
+                            
+                            VStack(alignment: .leading){
+                                
                                 Text(rider.fullname)
+                                    .font(.system(size: 17, weight: .bold))
+                                
+                                HStack {
+                                    Image("ic_star")
+                                        .resizable()
+                                        .frame(width: 16, height: 16)
+                                    
+                                    Text(rider.rating.nicer())
+                                        .font(.system(size: 14, weight: .regular))
+                                }
                             }
                             
-                            HStack {
-                                Image("ic_star")
-                                    .resizable()
-                                    .frame(width: 16, height: 16)
+                            Spacer()
+                            
+                            Button {
+                                guard let phoneURL = URL(string: "tel://\(rider.phoneNumber)"),
+                                      UIApplication.shared.canOpenURL(phoneURL) else { return }
                                 
-                                Text("4.5")
-                                    .font(.system(size: 14, weight: .regular))
+                                UIApplication.shared.open(phoneURL, options: [:], completionHandler: nil)
+                            } label: {
+                                Image(systemName: "phone.fill")
+                                    .resizable()
+                                    .frame(width: 18, height: 18)
+                                    .padding(15)
+                                    .background(Color.green)
+                                    .clipShape(.circle)
+                                    .foregroundStyle(.white)
                             }
-                        }
-                        
-                        Spacer()
-                        
-                        Button {
-                            // implement call function
-                        } label: {
-                            Image(systemName: "phone.fill")
-                                .resizable()
-                                .frame(width: 18, height: 18)
-                                .padding(15)
-                                .background(Color.green)
-                                .clipShape(.circle)
-                                .foregroundStyle(.white)
                         }
                     }
                     
