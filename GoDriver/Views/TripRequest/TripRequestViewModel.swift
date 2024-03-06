@@ -20,7 +20,7 @@ extension TripRequestSheet {
             do {
                 self.trip = try realmManager.getTrip(id: id)
             } catch {
-                debugPrint(error.localizedDescription)
+                debugPrint("errorrrrr: " + error.localizedDescription)
             }
         }
         
