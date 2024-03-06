@@ -21,7 +21,7 @@ struct GoDriverApp: SwiftUI.App {
         WindowGroup {
             ContentView()
                 .onAppear {
-                    Logger.shared.level = .debug
+                    Logger.shared.level = .trace
                 }
         }
         .onChange(of: phase) { _, newPhase in

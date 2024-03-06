@@ -19,6 +19,7 @@ extension TripRequestSheet {
         func getTripRequest(_ id: ObjectId) {
             do {
                 self.trip = try realmManager.getTrip(id: id)
+                debugPrint(try realmManager.getTrip(id: id))
             } catch {
                 debugPrint("errorrrrr: " + error.localizedDescription)
             }

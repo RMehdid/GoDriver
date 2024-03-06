@@ -69,7 +69,7 @@ extension Trip {
 
 extension Trip {
     enum Category: String, PersistableEnum {
-        case classic = "Classic"
-        case business = "Business"
+        case classic
+        case business
     }
 }

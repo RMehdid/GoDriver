@@ -74,7 +74,6 @@ struct TripRequestSheet: View {
                             }
                             .buttonStyle(PlainButtonStyle())
                             
-                            
                             NavigationLink {
                                 TripFlowView(trip: trip)
                                     .toolbar(.hidden, for: .tabBar)
