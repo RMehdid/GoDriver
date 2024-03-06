@@ -28,11 +28,13 @@ class Driver: Object, ObjectKeyIdentifiable {
     
     @Persisted var rating: Double
     
+    @Persisted var trips: List<Trip>
+    
     convenience init(id: String, fullname: String) {
         self.init()
         self._id = id
         self.fullname = fullname
-        self.tripRequestId = .generate()
+        self.tripRequestId = nil
         self.currentTripId = nil
         self.isOnline = false
         self.revenue = 0

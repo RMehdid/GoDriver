@@ -20,9 +20,9 @@ class Trip: Object, ObjectKeyIdentifiable {
     
     @Persisted var dropOff: String
     
-    @Persisted var rider: Rider?
+    @Persisted(originProperty: "trips") var rider: LinkingObjects<Rider>
     
-    @Persisted var driver: Driver?
+    @Persisted(originProperty: "trips") var driver: LinkingObjects<Driver>
     
     convenience init(id: ObjectId) {
         self.init()

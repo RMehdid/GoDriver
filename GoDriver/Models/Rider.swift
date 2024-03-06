@@ -19,4 +19,6 @@ class Rider: Object, ObjectKeyIdentifiable {
     @Persisted var phoneNumber: String
     
     @Persisted var rating: Double
+    
+    @Persisted var trips: List<Trip>
 }

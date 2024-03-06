@@ -57,7 +57,7 @@ struct TripFlowView: View {
                 Spacer()
                 
                 VStack(spacing: 24){
-                    if let rider = trip.rider {
+                    if let rider = trip.rider.first {
                         HStack {
                             Circle()
                                 .frame(width: 40, height: 40)
