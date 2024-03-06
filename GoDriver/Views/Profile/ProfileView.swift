@@ -20,7 +20,7 @@ struct ProfileView: View {
     init(driver: Driver) {
         self._driver = ObservedRealmObject(wrappedValue: driver)
         
-        self._id = State(initialValue: driver._id)
+        self._id = State(initialValue: driver._id.stringValue)
         self._fullname = State(initialValue: driver.fullname)
         self._phoneNumber = State(initialValue: driver.phoneNumber)
     }
@@ -75,5 +75,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView(driver: Driver(id: "10202", fullname: "Samy H"))
+    ProfileView(driver: Driver(id:  ObjectId("10202"), fullname: "Samy H"))
 }

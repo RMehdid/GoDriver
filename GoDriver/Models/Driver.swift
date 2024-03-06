@@ -10,7 +10,7 @@ import RealmSwift
 
 class Driver: Object, ObjectKeyIdentifiable {
     
-    @Persisted(primaryKey: true) var _id: String
+    @Persisted(primaryKey: true) var _id: ObjectId
     
     @Persisted var fullname: String
     
@@ -30,7 +30,7 @@ class Driver: Object, ObjectKeyIdentifiable {
     
     @Persisted var trips: List<Trip>
     
-    convenience init(id: String, fullname: String) {
+    convenience init(id: ObjectId, fullname: String) {
         self.init()
         self._id = id
         self.fullname = fullname

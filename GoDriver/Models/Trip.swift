@@ -33,6 +33,25 @@ class Trip: Object, ObjectKeyIdentifiable {
     convenience init(id: ObjectId) {
         self.init()
         self._id = id
+        self.status = .pending
+        self.price = 450
+        self.pickup = "Said Hamdine"
+        self.dropOff = "Bab El Oued"
+        self.category = .business
+        self.createdAt = .now
+        self.updatedAt = .now
+    }
+    
+    convenience override init() {
+        self.init()
+        self._id = .generate()
+        self.status = .pending
+        self.price = 450
+        self.pickup = "Said Hamdine"
+        self.dropOff = "Bab El Oued"
+        self.category = .business
+        self.createdAt = .now
+        self.updatedAt = .now
     }
 }
 

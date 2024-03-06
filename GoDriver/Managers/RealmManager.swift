@@ -80,7 +80,7 @@ class RealmManager: ObservableObject {
     func createDriver() throws {
         guard let id = app.currentUser?.id else { return }
         
-        let newDriver = Driver(id: id, fullname: "Samy Mehdid")
+        let newDriver = Driver(id: try ObjectId(string: id), fullname: "Samy Mehdid")
         
         try realm?.write {
             self.realm?.add(newDriver)
@@ -91,11 +91,20 @@ class RealmManager: ObservableObject {
     func getDriver() throws {
         guard let id = app.currentUser?.id else { return }
         
-        self.driver = self.realm?.object(ofType: Driver.self, forPrimaryKey: id)
+        self.driver = self.realm?.object(ofType: Driver.self, forPrimaryKey: try ObjectId(string: id))
     }
     
     @MainActor
     func getTrip(id: ObjectId) throws -> Trip? {
         return self.realm?.object(ofType: Trip.self, forPrimaryKey: id)
+    }
+    
+    @MainActor
+    func createTrip() throws {
+        let newTrip = Trip()
+        
+        try realm?.write {
+            self.realm?.add(newTrip)
+        }
     }
 }

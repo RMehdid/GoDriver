@@ -10,11 +10,11 @@ import RealmSwift
 
 class Rider: Object, ObjectKeyIdentifiable {
     
-    @Persisted(primaryKey: true) var _id: String
+    @Persisted(primaryKey: true) var _id: ObjectId
     
     @Persisted var fullname: String
     
-    @Persisted var profileImageUrl: String
+    @Persisted var profileImageUrl: String?
     
     @Persisted var phoneNumber: String
     

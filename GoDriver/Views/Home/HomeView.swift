@@ -135,6 +135,6 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(driver:  Driver(id: "10202", fullname: "Samy H"))
+    HomeView(driver:  Driver(id: ObjectId("10202"), fullname: "Samy H"))
 }
 
