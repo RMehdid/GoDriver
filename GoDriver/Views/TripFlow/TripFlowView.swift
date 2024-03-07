@@ -11,12 +11,16 @@ import RealmSwift
 
 struct TripFlowView: View {
     
-    @ObservedRealmObject var trip: Trip
-    
     @StateObject private var viewModel = ViewModel()
     
+    let tripId: ObjectId
+    
+    init(id: ObjectId) {
+        self.tripId = id
+    }
+    
     var buttonTitle: String {
-        switch trip.status {
+        switch viewModel.trip?.status {
         case .accepted:
             return "Go to client"
         case .toClient:
@@ -29,35 +33,20 @@ struct TripFlowView: View {
         }
     }
     
-    var nextStatus: Trip.Status {
-        switch trip.status {
-        case .pending:
-            return .accepted
-        case .accepted:
-            return .toClient
-        case .toClient:
-            return .arrivedClient
-        case .arrivedClient:
-            return .toDestination
-        case .toDestination:
-            return .arrivedDestination
-        case .arrivedDestination:
-            return .arrivedDestination
-        }
-    }
-    
     var body: some View {
         ZStack {
             Map(initialPosition: .automatic)
             
             VStack {
-                TripInfoCard(trip: trip)
-                    .padding()
+                if let trip = viewModel.trip {
+                    TripInfoCard(trip: trip)
+                        .padding()
+                }
                 
                 Spacer()
                 
                 VStack(spacing: 24){
-                    if let rider = trip.rider.first {
+                    if let rider = viewModel.trip?.rider.first {
                         HStack {
                             Circle()
                                 .frame(width: 40, height: 40)
@@ -97,7 +86,7 @@ struct TripFlowView: View {
                     }
                     
                     Button {
-                        viewModel.updateTripStatus(trip: trip, status: nextStatus)
+                        viewModel.updateTripStatus()
                     } label: {
                         Text(buttonTitle)
                             .font(.system(size: 17, weight: .bold))
@@ -123,11 +112,14 @@ struct TripFlowView: View {
                 )
             }
             .ignoresSafeArea(.all, edges: .bottom)
+            .onAppear {
+                viewModel.getTrip(tripId)
+            }
         }
         .navigationBarBackButtonHidden()
     }
 }
 
 #Preview {
-    TripFlowView(trip: Trip(id: ObjectId("65e7638152e9471b77904173")))
+    TripFlowView(id: ObjectId("65e8373bdd4e088a23176b9d"))
 }

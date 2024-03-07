@@ -66,8 +66,6 @@ class RealmManager: ObservableObject {
         guard let id = app.currentUser?.id else { return }
         
         self.driver = self.realm?.object(ofType: Driver.self, forPrimaryKey: id)
-        
-        debugPrint(driver)
     }
     
     @MainActor

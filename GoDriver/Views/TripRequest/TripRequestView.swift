@@ -74,9 +74,8 @@ struct TripRequestSheet: View {
                             }
                             .buttonStyle(PlainButtonStyle())
                             
-                            NavigationLink {
-                                TripFlowView(trip: trip)
-                                    .toolbar(.hidden, for: .tabBar)
+                            Button {
+                                viewModel.acceptTrip(tripId: tripId)
                             } label: {
                                 Text("Accept")
                                     .font(.system(size: 14, weight: .semibold))
@@ -85,9 +84,6 @@ struct TripRequestSheet: View {
                                     .background(Color(red: 99 / 255, green: 22 / 255, blue: 219 / 255))
                                     .clipShape(.capsule)
                                     .foregroundColor(.white)
-                            }
-                            .onTapGesture {
-                                viewModel.acceptTrip(tripId: tripId)
                             }
                         }
                     }
@@ -103,7 +99,6 @@ struct TripRequestSheet: View {
         .onAppear {
             viewModel.getTripRequest(tripId)
         }
-            
     }
 }
 

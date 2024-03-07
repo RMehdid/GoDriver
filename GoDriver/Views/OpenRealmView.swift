@@ -6,6 +6,8 @@ struct OpenRealmView: View {
     @AutoOpen(appId: theAppConfig.appId, timeout: 2000) var autoOpen
     
     @ObservedObject var driver: Driver
+    
+    let realmManager = RealmManager.shared
 
     var body: some View {
         switch autoOpen {
@@ -14,7 +16,12 @@ struct OpenRealmView: View {
         case .waitingForUser:
             ProgressView("Waiting for user to log in...")
         case .open(let realm):
-            HomeView(driver: driver)
+            if let currentTripId = driver.currentTripId {
+                TripFlowView(id: currentTripId)
+            } else {
+                HomeView(driver: driver)
+            }
+            
         case .progress(let progress):
             ProgressView(progress)
         case .error(let error):

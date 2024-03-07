@@ -64,6 +64,27 @@ extension Trip {
         case arrivedClient
         case toDestination
         case arrivedDestination
+        
+        var next: Self {
+            switch self {
+            case .pending:
+                return .accepted
+            case .accepted:
+                return .toClient
+            case .toClient:
+                return .arrivedClient
+            case .arrivedClient:
+                return .toDestination
+            case .toDestination:
+                return .arrivedDestination
+            case .arrivedDestination:
+                return .arrivedDestination
+            }
+        }
+        
+        mutating func setNext() {
+            self = self.next
+        }
     }
 }
 
