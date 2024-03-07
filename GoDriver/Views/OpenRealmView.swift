@@ -23,7 +23,7 @@ struct OpenRealmView: View {
             }
             
         case .progress(let progress):
-            ProgressView(progress)
+            SplashView(progress: progress)
         case .error(let error):
             EmptyView()
         }

@@ -10,6 +10,8 @@ struct ContentView: View {
                 if let driver = realmManager.driver,
                    nil != realmManager.realm {
                     OpenRealmView(driver: driver)
+                } else {
+                    SplashView(progress: .discreteProgress(totalUnitCount: 100))
                 }
             }
             .task{ await realmManager.initialize() }

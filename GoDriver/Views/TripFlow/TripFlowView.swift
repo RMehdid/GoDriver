@@ -9,18 +9,9 @@ import SwiftUI
 import MapKit
 import RealmSwift
 
-struct TripFlowView: View {
-    
-    @StateObject private var viewModel = ViewModel()
-    
-    let tripId: ObjectId
-    
-    init(id: ObjectId) {
-        self.tripId = id
-    }
-    
+extension Trip.Status {
     var buttonTitle: String {
-        switch viewModel.trip?.status {
+        switch self {
         case .accepted:
             return "Go to client"
         case .toClient:
@@ -31,6 +22,17 @@ struct TripFlowView: View {
             return "Finish Ride"
         default: return ""
         }
+    }
+}
+
+struct TripFlowView: View {
+    
+    @StateObject private var viewModel = ViewModel()
+    
+    let tripId: ObjectId
+    
+    init(id: ObjectId) {
+        self.tripId = id
     }
     
     var body: some View {
@@ -88,7 +90,7 @@ struct TripFlowView: View {
                     Button {
                         viewModel.updateTripStatus()
                     } label: {
-                        Text(buttonTitle)
+                        Text(viewModel.trip?.status.buttonTitle ?? "")
                             .font(.system(size: 17, weight: .bold))
                             .foregroundStyle(Color.white)
                             .frame(maxWidth: .infinity)

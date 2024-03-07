@@ -46,6 +46,7 @@
 		9982BC012B987B1D0021FB1C /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BC002B987B1D0021FB1C /* Date.swift */; };
 		9982BC042B98A1190021FB1C /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BC032B98A1190021FB1C /* Realm.swift */; };
 		9982BC062B98A1CB0021FB1C /* SyncSubscriptionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BC052B98A1CB0021FB1C /* SyncSubscriptionSet.swift */; };
+		99C96C5F2B99E6C4006B356A /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C5E2B99E6C4006B356A /* SplashView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		9982BC022B98923B0021FB1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9982BC032B98A1190021FB1C /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		9982BC052B98A1CB0021FB1C /* SyncSubscriptionSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncSubscriptionSet.swift; sourceTree = "<group>"; };
+		99C96C5E2B99E6C4006B356A /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			children = (
 				913D464C2770E46800ABE7D3 /* ContentView.swift */,
 				917097DD27A05F0000F1D65B /* OpenRealmView.swift */,
+				99C96C5E2B99E6C4006B356A /* SplashView.swift */,
 				99368E052B95FA81000FC901 /* Login */,
 				99368E042B95E563000FC901 /* Home */,
 				99368E0A2B9612E5000FC901 /* TripRequest */,
@@ -382,6 +385,7 @@
 				911F548827C6A2BC005D4876 /* AppConfig.swift in Sources */,
 				99368E012B95E4E1000FC901 /* HomeView.swift in Sources */,
 				9982BBF22B97B4550021FB1C /* TripFlowView.swift in Sources */,
+				99C96C5F2B99E6C4006B356A /* SplashView.swift in Sources */,
 				9982BBE82B968B460021FB1C /* ProfileViewModel.swift in Sources */,
 				9982BBF62B97C95E0021FB1C /* TripFlowViewModel.swift in Sources */,
 				9982BBED2B9709920021FB1C /* ProfileTextField.swift in Sources */,
