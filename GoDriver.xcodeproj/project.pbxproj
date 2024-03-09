@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		68D3DF5A2942677E005209D9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3DF592942677E005209D9 /* Constants.swift */; };
-		911F548827C6A2BC005D4876 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911F548727C6A2BC005D4876 /* AppConfig.swift */; };
 		912196BE27C6868100407648 /* atlasConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 912196BD27C6868100407648 /* atlasConfig.plist */; };
 		913D464B2770E46800ABE7D3 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913D464A2770E46800ABE7D3 /* App.swift */; };
 		913D464D2770E46800ABE7D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913D464C2770E46800ABE7D3 /* ContentView.swift */; };
@@ -47,11 +45,11 @@
 		9982BC042B98A1190021FB1C /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BC032B98A1190021FB1C /* Realm.swift */; };
 		9982BC062B98A1CB0021FB1C /* SyncSubscriptionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BC052B98A1CB0021FB1C /* SyncSubscriptionSet.swift */; };
 		99C96C5F2B99E6C4006B356A /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C5E2B99E6C4006B356A /* SplashView.swift */; };
+		99C96C622B9A0761006B356A /* BackgroundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C612B9A0761006B356A /* BackgroundManager.swift */; };
+		99C96C642B9A0A28006B356A /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C632B9A0A28006B356A /* ConfigManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		68D3DF592942677E005209D9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		911F548727C6A2BC005D4876 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		912196BD27C6868100407648 /* atlasConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = atlasConfig.plist; sourceTree = "<group>"; };
 		913D46472770E46800ABE7D3 /* GoDriver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoDriver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		913D464A2770E46800ABE7D3 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -90,6 +88,8 @@
 		9982BC032B98A1190021FB1C /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		9982BC052B98A1CB0021FB1C /* SyncSubscriptionSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncSubscriptionSet.swift; sourceTree = "<group>"; };
 		99C96C5E2B99E6C4006B356A /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		99C96C612B9A0761006B356A /* BackgroundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundManager.swift; sourceTree = "<group>"; };
+		99C96C632B9A0A28006B356A /* ConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,15 +126,13 @@
 			isa = PBXGroup;
 			children = (
 				9982BC022B98923B0021FB1C /* Info.plist */,
-				99368E062B95FA8D000FC901 /* Managers */,
 				9982BBEB2B9709170021FB1C /* Components */,
 				99495BB72B90C9DB00D726CC /* Extensions */,
 				912196BD27C6868100407648 /* atlasConfig.plist */,
-				911F548727C6A2BC005D4876 /* AppConfig.swift */,
 				913D464A2770E46800ABE7D3 /* App.swift */,
-				68D3DF592942677E005209D9 /* Constants.swift */,
 				917097E727A0600000F1D65B /* Views */,
 				99368DF72B95D7BB000FC901 /* Models */,
+				99C96C602B9A073C006B356A /* Service */,
 				913D46502770E46A00ABE7D3 /* Preview Content */,
 				913D464E2770E46A00ABE7D3 /* Assets.xcassets */,
 			);
@@ -199,6 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				99368DF52B95C75B000FC901 /* RealmManager.swift */,
+				99C96C612B9A0761006B356A /* BackgroundManager.swift */,
+				99C96C632B9A0A28006B356A /* ConfigManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -285,6 +285,14 @@
 				99495BB52B90C9D600D726CC /* Color.swift */,
 			);
 			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		99C96C602B9A073C006B356A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				99368E062B95FA8D000FC901 /* Managers */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,15 +389,14 @@
 				99368DF62B95C75B000FC901 /* RealmManager.swift in Sources */,
 				9982BBFA2B9871980021FB1C /* TripHistoryView.swift in Sources */,
 				9982BBE12B9624540021FB1C /* Trip.swift in Sources */,
+				99C96C622B9A0761006B356A /* BackgroundManager.swift in Sources */,
 				99368DF92B95D7CB000FC901 /* Driver.swift in Sources */,
-				911F548827C6A2BC005D4876 /* AppConfig.swift in Sources */,
 				99368E012B95E4E1000FC901 /* HomeView.swift in Sources */,
 				9982BBF22B97B4550021FB1C /* TripFlowView.swift in Sources */,
 				99C96C5F2B99E6C4006B356A /* SplashView.swift in Sources */,
 				9982BBE82B968B460021FB1C /* ProfileViewModel.swift in Sources */,
 				9982BBF62B97C95E0021FB1C /* TripFlowViewModel.swift in Sources */,
 				9982BBED2B9709920021FB1C /* ProfileTextField.swift in Sources */,
-				68D3DF5A2942677E005209D9 /* Constants.swift in Sources */,
 				9982BC042B98A1190021FB1C /* Realm.swift in Sources */,
 				9982BBF42B97B5400021FB1C /* TripInfoCard.swift in Sources */,
 				9982BBFD2B9871B50021FB1C /* TripHistoryViewModel.swift in Sources */,
@@ -399,6 +406,7 @@
 				9982BC062B98A1CB0021FB1C /* SyncSubscriptionSet.swift in Sources */,
 				9982BBEA2B9704970021FB1C /* String.swift in Sources */,
 				913D464B2770E46800ABE7D3 /* App.swift in Sources */,
+				99C96C642B9A0A28006B356A /* ConfigManager.swift in Sources */,
 				99368DFD2B95DA33000FC901 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

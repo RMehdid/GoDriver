@@ -3,7 +3,7 @@ import RealmSwift
 
 /// Called when login completes. Opens the realm and navigates to the Items screen.
 struct OpenRealmView: View {
-    @AutoOpen(appId: theAppConfig.appId, timeout: 2000) var autoOpen
+    @AutoOpen(appId: app.appId, timeout: 2000) var autoOpen
     
     @ObservedObject var driver: Driver
     
