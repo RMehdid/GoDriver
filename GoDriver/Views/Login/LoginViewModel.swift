@@ -9,7 +9,8 @@ import Foundation
 
 extension LoginView {
     class ViewModel: ObservableObject {
-        private let realmManager = RealmManager.shared
+        
+        private let loginManager = LoginRepo.sharedLogin
         
         @Published private(set) var loginUiState: LoginInUiState = .loggedOut
         
@@ -19,7 +20,7 @@ extension LoginView {
             loginUiState = .logginIn
             Task {
                 do {
-                    try await realmManager.login(email: email, password: password)
+                    try await loginManager.login(email: email, password: password)
                     loginUiState = .loggedIn
                 } catch {
                     loginUiState = .loggedOut
@@ -33,7 +34,7 @@ extension LoginView {
             self.loginUiState = .logginIn
             Task {
                 do {
-                    try await realmManager.signUp(email: email, password: password)
+                    try await loginManager.signUp(email: email, password: password)
                     self.loginUiState = .loggedIn
                 } catch {
                     self.loginUiState = .loggedOut

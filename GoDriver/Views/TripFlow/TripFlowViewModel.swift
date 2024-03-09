@@ -12,25 +12,21 @@ import RealmSwift
 extension TripFlowView {
     class ViewModel: ObservableObject {
         
-        @Published var trip: Trip?
-        
-        private let realmManager = RealmManager.shared
+        let tripManager = TripRepo.sharedTrip
         
         @MainActor
         func getTrip(_ id: ObjectId) {
             do {
-                self.trip = try realmManager.getTrip(id: id)
+                try tripManager.getTrip(id)
             } catch {
-                debugPrint("errorrrrr: " + error.localizedDescription)
+                debugPrint(error.localizedDescription)
             }
         }
         
         @MainActor
         func updateTripStatus() {
             do {
-                try realmManager.realm?.write {
-                    self.trip?.status.setNext()
-                }
+                try tripManager.updateTripStatus()
             } catch {
                 print(error.localizedDescription)
             }

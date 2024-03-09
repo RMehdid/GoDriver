@@ -11,18 +11,25 @@ import RealmSwift
 extension HomeView {
     class ViewModel: ObservableObject {
         
-        let realmManager = RealmManager.shared
+        let tripManager = TripRepo.sharedTrip
+        let driverManager = DriverRepo.sharedDriver
         
         @MainActor
         func updateDriverOnline(isOnline: Bool) {
             do {
-                try realmManager.realm?.write {
-                    realmManager.driver?.isOnline = isOnline
-                }
+                try driverManager.updateDriverOnline(isOnline: isOnline)
             } catch {
                 print(error.localizedDescription)
             }
         }
         
+        @MainActor
+        func createTripRequest() {
+            do {
+                try tripManager.createTripRequest()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 }

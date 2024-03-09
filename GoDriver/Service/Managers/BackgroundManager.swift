@@ -2,7 +2,7 @@
 //  BackgroundManager.swift
 //  GoDriver
 //
-//  Created by Samy Mehdid on 7/3/2024.
+//  Created by Samy Mehdid on 9/3/2024.
 //
 
 import Foundation

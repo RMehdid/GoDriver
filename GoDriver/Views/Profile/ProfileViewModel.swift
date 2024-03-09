@@ -9,14 +9,12 @@ import Foundation
 
 extension ProfileView {
     class ViewModel: ObservableObject {
-        let realmManager = RealmManager.shared
+        let driverManager = DriverRepo.sharedDriver
         
         @MainActor
         func updateFullname(_ fullname: String) {
             do {
-                try realmManager.realm?.write {
-                    realmManager.driver?.fullname = fullname
-                }
+                try driverManager.updateFullname(fullname)
             } catch {
                 print(error.localizedDescription)
             }
@@ -25,9 +23,7 @@ extension ProfileView {
         @MainActor
         func updatePhoneNumber(_ phone: String) {
             do {
-                try realmManager.realm?.write {
-                    realmManager.driver?.phoneNumber = phone
-                }
+                try driverManager.updateFullname(phone)
             } catch {
                 print(error.localizedDescription)
             }

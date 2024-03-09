@@ -20,7 +20,7 @@ struct TripRequestSheet: View {
     
     var body: some View {
         ZStack{
-            if let trip = viewModel.trip {
+            if let trip = viewModel.tripManager.trip {
                 ZStack(alignment: .center){
                     VStack(alignment: .leading){
                         VStack(spacing: 0){

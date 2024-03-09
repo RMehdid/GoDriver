@@ -40,7 +40,7 @@ struct TripFlowView: View {
             Map(initialPosition: .automatic)
             
             VStack {
-                if let trip = viewModel.trip {
+                if let trip = viewModel.tripManager.trip {
                     TripInfoCard(trip: trip)
                         .padding()
                 }
@@ -48,7 +48,7 @@ struct TripFlowView: View {
                 Spacer()
                 
                 VStack(spacing: 24){
-                    if let rider = viewModel.trip?.rider.first {
+                    if let rider = viewModel.tripManager.trip?.rider.first {
                         HStack {
                             Circle()
                                 .frame(width: 40, height: 40)
@@ -90,7 +90,7 @@ struct TripFlowView: View {
                     Button {
                         viewModel.updateTripStatus()
                     } label: {
-                        Text(viewModel.trip?.status.buttonTitle ?? "")
+                        Text(viewModel.tripManager.trip?.status.buttonTitle ?? "")
                             .font(.system(size: 17, weight: .bold))
                             .foregroundStyle(Color.white)
                             .frame(maxWidth: .infinity)

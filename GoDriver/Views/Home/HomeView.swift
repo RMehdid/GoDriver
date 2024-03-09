@@ -63,6 +63,14 @@ struct HomeView: View {
                         .clipShape(Capsule())
                         Spacer()
                         
+                        Button("Assign Trip request") {
+                            viewModel.createTripRequest()
+                        }
+                        .padding(8)
+                        .background(Color.white)
+                        .clipShape(.capsule)
+                        .padding()
+                        
                         Toggle(statusTitle, isOn: $isOnline)
                             .font(.system(size: 17, weight: .bold))
                             .padding()

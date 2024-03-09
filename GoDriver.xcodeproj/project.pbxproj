@@ -16,7 +16,6 @@
 		915E413A284937E700D7C234 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 915E4139284937E700D7C234 /* Realm */; };
 		915E413C284937E700D7C234 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 915E413B284937E700D7C234 /* RealmSwift */; };
 		917097DE27A05F0000F1D65B /* OpenRealmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917097DD27A05F0000F1D65B /* OpenRealmView.swift */; };
-		99368DF62B95C75B000FC901 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99368DF52B95C75B000FC901 /* RealmManager.swift */; };
 		99368DF92B95D7CB000FC901 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99368DF82B95D7CB000FC901 /* Driver.swift */; };
 		99368DFB2B95D7E9000FC901 /* DriverStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99368DFA2B95D7E9000FC901 /* DriverStatus.swift */; };
 		99368DFD2B95DA33000FC901 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99368DFC2B95DA33000FC901 /* LoginViewModel.swift */; };
@@ -45,8 +44,12 @@
 		9982BC042B98A1190021FB1C /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BC032B98A1190021FB1C /* Realm.swift */; };
 		9982BC062B98A1CB0021FB1C /* SyncSubscriptionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9982BC052B98A1CB0021FB1C /* SyncSubscriptionSet.swift */; };
 		99C96C5F2B99E6C4006B356A /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C5E2B99E6C4006B356A /* SplashView.swift */; };
-		99C96C622B9A0761006B356A /* BackgroundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C612B9A0761006B356A /* BackgroundManager.swift */; };
-		99C96C642B9A0A28006B356A /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C96C632B9A0A28006B356A /* ConfigManager.swift */; };
+		FB9185942B9CD469002F1AF2 /* LoginRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9185932B9CD469002F1AF2 /* LoginRepo.swift */; };
+		FB9185972B9CD53F002F1AF2 /* DriverRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9185962B9CD53F002F1AF2 /* DriverRepo.swift */; };
+		FB9185992B9CD5A8002F1AF2 /* TripRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9185982B9CD5A8002F1AF2 /* TripRepo.swift */; };
+		FB9185A22B9D13D5002F1AF2 /* BackgroundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9185A12B9D13D5002F1AF2 /* BackgroundManager.swift */; };
+		FB9185A42B9D13E1002F1AF2 /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9185A32B9D13E1002F1AF2 /* ConfigManager.swift */; };
+		FB9185A62B9D13E9002F1AF2 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9185A52B9D13E9002F1AF2 /* RealmManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,7 +61,6 @@
 		913D46512770E46A00ABE7D3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		913D46612770F0C600ABE7D3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		917097DD27A05F0000F1D65B /* OpenRealmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenRealmView.swift; sourceTree = "<group>"; };
-		99368DF52B95C75B000FC901 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		99368DF82B95D7CB000FC901 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		99368DFA2B95D7E9000FC901 /* DriverStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStatus.swift; sourceTree = "<group>"; };
 		99368DFC2B95DA33000FC901 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -88,8 +90,12 @@
 		9982BC032B98A1190021FB1C /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		9982BC052B98A1CB0021FB1C /* SyncSubscriptionSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncSubscriptionSet.swift; sourceTree = "<group>"; };
 		99C96C5E2B99E6C4006B356A /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		99C96C612B9A0761006B356A /* BackgroundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundManager.swift; sourceTree = "<group>"; };
-		99C96C632B9A0A28006B356A /* ConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
+		FB9185932B9CD469002F1AF2 /* LoginRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepo.swift; sourceTree = "<group>"; };
+		FB9185962B9CD53F002F1AF2 /* DriverRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverRepo.swift; sourceTree = "<group>"; };
+		FB9185982B9CD5A8002F1AF2 /* TripRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRepo.swift; sourceTree = "<group>"; };
+		FB9185A12B9D13D5002F1AF2 /* BackgroundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundManager.swift; sourceTree = "<group>"; };
+		FB9185A32B9D13E1002F1AF2 /* ConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
+		FB9185A52B9D13E9002F1AF2 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,16 +199,6 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		99368E062B95FA8D000FC901 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				99368DF52B95C75B000FC901 /* RealmManager.swift */,
-				99C96C612B9A0761006B356A /* BackgroundManager.swift */,
-				99C96C632B9A0A28006B356A /* ConfigManager.swift */,
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
 		99368E0A2B9612E5000FC901 /* TripRequest */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,9 +286,30 @@
 		99C96C602B9A073C006B356A /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				99368E062B95FA8D000FC901 /* Managers */,
+				FB9185A02B9D139D002F1AF2 /* Managers */,
+				FB9185952B9CD4BC002F1AF2 /* Repos */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		FB9185952B9CD4BC002F1AF2 /* Repos */ = {
+			isa = PBXGroup;
+			children = (
+				FB9185932B9CD469002F1AF2 /* LoginRepo.swift */,
+				FB9185962B9CD53F002F1AF2 /* DriverRepo.swift */,
+				FB9185982B9CD5A8002F1AF2 /* TripRepo.swift */,
+			);
+			path = Repos;
+			sourceTree = "<group>";
+		};
+		FB9185A02B9D139D002F1AF2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FB9185A52B9D13E9002F1AF2 /* RealmManager.swift */,
+				FB9185A32B9D13E1002F1AF2 /* ConfigManager.swift */,
+				FB9185A12B9D13D5002F1AF2 /* BackgroundManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,21 +392,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				99368E032B95E541000FC901 /* HomeViewModel.swift in Sources */,
+				FB9185A42B9D13E1002F1AF2 /* ConfigManager.swift in Sources */,
 				9982BBFF2B9876160021FB1C /* TripHistoryCard.swift in Sources */,
 				917097DE27A05F0000F1D65B /* OpenRealmView.swift in Sources */,
 				9982BBE32B963ACF0021FB1C /* Rider.swift in Sources */,
 				99368DFF2B95DA92000FC901 /* UiState.swift in Sources */,
 				913D46622770F0C600ABE7D3 /* LoginView.swift in Sources */,
 				99368E0C2B9612F5000FC901 /* TripRequestViewModel.swift in Sources */,
+				FB9185A22B9D13D5002F1AF2 /* BackgroundManager.swift in Sources */,
 				913D464D2770E46800ABE7D3 /* ContentView.swift in Sources */,
 				9982BBF82B9866C70021FB1C /* Double.swift in Sources */,
 				99495BB62B90C9D600D726CC /* Color.swift in Sources */,
 				9982BBEF2B976D580021FB1C /* ProgressBar.swift in Sources */,
 				99368E082B9612D4000FC901 /* TripRequestView.swift in Sources */,
-				99368DF62B95C75B000FC901 /* RealmManager.swift in Sources */,
+				FB9185972B9CD53F002F1AF2 /* DriverRepo.swift in Sources */,
 				9982BBFA2B9871980021FB1C /* TripHistoryView.swift in Sources */,
 				9982BBE12B9624540021FB1C /* Trip.swift in Sources */,
-				99C96C622B9A0761006B356A /* BackgroundManager.swift in Sources */,
 				99368DF92B95D7CB000FC901 /* Driver.swift in Sources */,
 				99368E012B95E4E1000FC901 /* HomeView.swift in Sources */,
 				9982BBF22B97B4550021FB1C /* TripFlowView.swift in Sources */,
@@ -398,6 +416,8 @@
 				9982BBF62B97C95E0021FB1C /* TripFlowViewModel.swift in Sources */,
 				9982BBED2B9709920021FB1C /* ProfileTextField.swift in Sources */,
 				9982BC042B98A1190021FB1C /* Realm.swift in Sources */,
+				FB9185A62B9D13E9002F1AF2 /* RealmManager.swift in Sources */,
+				FB9185942B9CD469002F1AF2 /* LoginRepo.swift in Sources */,
 				9982BBF42B97B5400021FB1C /* TripInfoCard.swift in Sources */,
 				9982BBFD2B9871B50021FB1C /* TripHistoryViewModel.swift in Sources */,
 				99368DFB2B95D7E9000FC901 /* DriverStatus.swift in Sources */,
@@ -406,8 +426,8 @@
 				9982BC062B98A1CB0021FB1C /* SyncSubscriptionSet.swift in Sources */,
 				9982BBEA2B9704970021FB1C /* String.swift in Sources */,
 				913D464B2770E46800ABE7D3 /* App.swift in Sources */,
-				99C96C642B9A0A28006B356A /* ConfigManager.swift in Sources */,
 				99368DFD2B95DA33000FC901 /* LoginViewModel.swift in Sources */,
+				FB9185992B9CD5A8002F1AF2 /* TripRepo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

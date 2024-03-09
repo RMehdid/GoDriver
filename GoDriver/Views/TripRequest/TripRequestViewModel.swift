@@ -11,29 +11,21 @@ import RealmSwift
 extension TripRequestSheet {
     class ViewModel: ObservableObject {
         
-        @Published var trip: Trip?
-        
-        private let realmManager = RealmManager.shared
+        let tripManager = TripRepo.sharedTrip
         
         @MainActor
         func getTripRequest(_ id: ObjectId) {
             do {
-                self.trip = try realmManager.getTrip(id: id)
+                try tripManager.getTrip(id)
             } catch {
-                debugPrint("errorrrrr: " + error.localizedDescription)
+                debugPrint(error.localizedDescription)
             }
         }
         
         @MainActor
         func acceptTrip(tripId: ObjectId) {
-            guard realmManager.driver?.tripRequestId == tripId else { return }
-            
             do {
-                try realmManager.realm?.write {
-                    realmManager.driver?.currentTripId = tripId
-                    self.trip?.status = .accepted
-                    realmManager.driver?.tripRequestId = nil
-                }
+                try tripManager.acceptTrip(tripId)
             } catch {
                 print(error.localizedDescription)
             }
@@ -41,12 +33,8 @@ extension TripRequestSheet {
         
         @MainActor
         func rejectTrip(tripId: ObjectId) {
-            guard realmManager.driver?.tripRequestId == tripId else { return }
-            
             do {
-                try realmManager.realm?.write {
-                    realmManager.driver?.tripRequestId = nil
-                }
+                try tripManager.rejectTrip()
             } catch {
                 print(error.localizedDescription)
             }
