@@ -132,10 +132,10 @@
 			isa = PBXGroup;
 			children = (
 				9982BC022B98923B0021FB1C /* Info.plist */,
-				9982BBEB2B9709170021FB1C /* Components */,
-				99495BB72B90C9DB00D726CC /* Extensions */,
 				912196BD27C6868100407648 /* atlasConfig.plist */,
 				913D464A2770E46800ABE7D3 /* App.swift */,
+				9982BBEB2B9709170021FB1C /* Components */,
+				99495BB72B90C9DB00D726CC /* Extensions */,
 				917097E727A0600000F1D65B /* Views */,
 				99368DF72B95D7BB000FC901 /* Models */,
 				99C96C602B9A073C006B356A /* Service */,
