@@ -16,7 +16,6 @@ class RealmManager: ObservableObject {
     
     @MainActor
     func initialize() async {
-        
         do {
             guard var flexSyncConfig = app.currentUser?.flexibleSyncConfiguration() else { return }
             flexSyncConfig.objectTypes = [Driver.self, Trip.self, Rider.self]

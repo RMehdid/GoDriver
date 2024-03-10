@@ -14,13 +14,12 @@ class LoginRepo: RealmManager {
     @MainActor
     func login(email: String, password: String) async throws {
         let _ = try await app.login(credentials: .emailPassword(email: email, password: password))
-        await initialize()
     }
     
     @MainActor
     func signUp(email: String, password: String) async throws {
         try await app.emailPasswordAuth.registerUser(email: email, password: password)
         try await self.login(email: email, password: password)
-        try DriverRepo.sharedDriver.createDriver()
+        try await  DriverRepo.sharedDriver.createDriver()
     }
 }

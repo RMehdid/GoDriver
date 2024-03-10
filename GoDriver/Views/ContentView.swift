@@ -15,7 +15,15 @@ struct ContentView: View {
                     SplashView(progress: .discreteProgress(totalUnitCount: 100))
                 }
             }
-            .task{ await realmManager.initialize() }
+            .task { await realmManager.initialize() }
+            .task {
+                do {
+                    try await driverManager.getDriver()
+                } catch {
+                    debugPrint(error.localizedDescription)
+                }
+            }
+            
         } else {
             LoginView()
         }
