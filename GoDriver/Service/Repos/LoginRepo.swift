@@ -20,6 +20,6 @@ class LoginRepo: RealmManager {
     func signUp(email: String, password: String) async throws {
         try await app.emailPasswordAuth.registerUser(email: email, password: password)
         try await self.login(email: email, password: password)
-        try await  DriverRepo.sharedDriver.createDriver()
+        try await DriverRepo.sharedDriver.createDriver()
     }
 }

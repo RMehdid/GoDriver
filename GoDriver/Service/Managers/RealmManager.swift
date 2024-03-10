@@ -7,6 +7,7 @@
 
 import Foundation
 import RealmSwift
+import Realm
 
 class RealmManager: ObservableObject {
     
@@ -29,8 +30,37 @@ class RealmManager: ObservableObject {
             
             self.realm = realm
             
+            await DriverRepo.sharedDriver.getDriver()
+            
         } catch {
             print("Failed to open realm: \(error.localizedDescription)")
+        }
+    }
+    
+    @MainActor
+    func write<Result>(_ block: (() throws -> Result)) throws {
+        
+        if let realm = self.realm {
+            try realm.write(block)
+        }
+    }
+    
+    @MainActor
+    func get<Element, KeyType>(
+        ofType type: Element.Type,
+        forPrimaryKey key: KeyType
+    ) -> Element? where Element : RealmSwiftObject {
+        if let realm = self.realm {
+            return realm.object(ofType: type, forPrimaryKey: key)
+        } else {
+            return nil
+        }
+    }
+    
+    @MainActor
+    func add(_ object: Object) {
+        if let realm = self.realm {
+            realm.add(object)
         }
     }
 }
