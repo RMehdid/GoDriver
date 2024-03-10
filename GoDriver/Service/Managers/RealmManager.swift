@@ -46,18 +46,6 @@ class RealmManager: ObservableObject {
     }
     
     @MainActor
-    func get<Element, KeyType>(
-        ofType type: Element.Type,
-        forPrimaryKey key: KeyType
-    ) -> Element? where Element : RealmSwiftObject {
-        if let realm = self.realm {
-            return realm.object(ofType: type, forPrimaryKey: key)
-        } else {
-            return nil
-        }
-    }
-    
-    @MainActor
     func add(_ object: Object) {
         if let realm = self.realm {
             realm.add(object)

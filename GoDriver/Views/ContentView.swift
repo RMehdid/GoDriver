@@ -15,17 +15,10 @@ struct ContentView: View {
                     SplashView(progress: .discreteProgress(totalUnitCount: 100))
                 }
             }
-            .task { 
-               await runTasks()
-            }
+            .task { await realmManager.initialize() }
             
         } else {
             LoginView()
         }
-    }
-    
-    private func runTasks() async {
-        await realmManager.initialize()
-        await driverManager.getDriver()
     }
 }

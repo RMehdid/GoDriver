@@ -14,12 +14,8 @@ extension TripRequestSheet {
         let tripManager = TripRepo.sharedTrip
         
         @MainActor
-        func getTripRequest(_ id: ObjectId) {
-            do {
-                try tripManager.getTrip(id)
-            } catch {
-                debugPrint(error.localizedDescription)
-            }
+        func getTripRequest(_ id: ObjectId) async {
+            await tripManager.getTrip(id)
         }
         
         @MainActor

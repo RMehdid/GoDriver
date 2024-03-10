@@ -43,7 +43,12 @@ class DriverRepo: RealmManager {
             return
         }
         
-        self.driver = self.get(ofType: Driver.self, forPrimaryKey: id)
+        guard let realm = self.realm else {
+            await self.initialize()
+            return
+        }
+        
+        self.driver = self.realm?.object(ofType: Driver.self, forPrimaryKey: id)
         
         debugPrint("this is driver: " + driver.debugDescription)
     }

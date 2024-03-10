@@ -15,7 +15,7 @@ class TripRepo: RealmManager {
     @Published private(set) var trip: Trip?
     
     @MainActor
-    func getTrip(_ id: ObjectId) throws {
+    func getTrip(_ id: ObjectId) async {
         self.trip = self.realm?.object(ofType: Trip.self, forPrimaryKey: id)
     }
     
@@ -24,7 +24,7 @@ class TripRepo: RealmManager {
         
         try DriverRepo.sharedDriver.assignTrip(id)
         
-        try self.realm?.write {
+        try self.write {
             self.trip?.status = .accepted
         }
     }
@@ -36,7 +36,7 @@ class TripRepo: RealmManager {
     
     @MainActor
     func updateTripStatus() throws {
-        try self.realm?.write {
+        try self.write {
             self.trip?.status.setNext()
         }
     }
@@ -48,12 +48,12 @@ class TripRepo: RealmManager {
         
         let rider = Rider(_id: "65e836c6f4c9cfbe895f8b04")
         
-        try self.realm?.write {
-            self.realm?.add(rider)
+        try self.write {
+            self.add(rider)
         }
         
-        try self.realm?.write {
-            self.realm?.add(newTripRequest)
+        try self.write {
+            self.add(newTripRequest)
             rider.trips.append(newTripRequest)
             try DriverRepo.sharedDriver.assignTripRequest(newTripRequest._id)
         }

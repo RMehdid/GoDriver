@@ -96,8 +96,8 @@ struct TripRequestSheet: View {
                 .fixedSize(horizontal: false, vertical: true)
             }
         }
-        .onAppear {
-            viewModel.getTripRequest(tripId)
+        .task {
+            await viewModel.getTripRequest(tripId)
         }
     }
 }

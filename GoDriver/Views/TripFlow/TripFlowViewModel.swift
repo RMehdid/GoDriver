@@ -15,12 +15,8 @@ extension TripFlowView {
         let tripManager = TripRepo.sharedTrip
         
         @MainActor
-        func getTrip(_ id: ObjectId) {
-            do {
-                try tripManager.getTrip(id)
-            } catch {
-                debugPrint(error.localizedDescription)
-            }
+        func getTrip(_ id: ObjectId) async {
+            await tripManager.getTrip(id)
         }
         
         @MainActor
