@@ -15,6 +15,13 @@ struct ProgressBar: View {
     
     private let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
+    let timesUp: (() -> Void)?
+    
+    init(secondsAlive: Int, timesUp: (() -> Void)? = nil) {
+        self.secondsAlive = secondsAlive
+        self.timesUp = timesUp
+    }
+    
     var body: some View {
         GeometryReader { proxy in
             ZStack(alignment: .leading){
@@ -32,7 +39,10 @@ struct ProgressBar: View {
                     .foregroundStyle(Color(red: 99 / 255, green: 22 / 255, blue: 219 / 255))
             }
             .onReceive(timer) { _ in
-                guard progress >= (proxy.size.width / CGFloat((secondsAlive * 10))) else { return }
+                guard progress >= (proxy.size.width / CGFloat((secondsAlive * 10))) else {
+                    self.timesUp?()
+                    return
+                }
                 
                 progress -= (proxy.size.width / CGFloat((secondsAlive * 10)))
             }

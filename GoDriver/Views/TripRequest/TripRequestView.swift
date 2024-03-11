@@ -54,7 +54,9 @@ struct TripRequestSheet: View {
                             }
                         }
                         
-                        ProgressBar(secondsAlive: 15)
+                        ProgressBar(secondsAlive: 15) {
+                            viewModel.rejectTrip(tripId: tripId)
+                        }
                         
                         Text("\(trip.price) DA")
                             .font(.system(size: 18, weight: .semibold))

@@ -47,15 +47,11 @@ class TripRepo: RealmManager {
     func createTripRequest() throws {
         let newTripRequest = Trip(id: .generate())
         
-        let rider = Rider(_id: "65e836c6f4c9cfbe895f8b05")
-        
-        try RealmManager.shared.write {
-            RealmManager.shared.add(rider)
-        }
+        let rider = RealmManager.shared.realm?.object(ofType: Rider.self, forPrimaryKey: "65e836c6f4c9cfbe895f8b04")
         
         try RealmManager.shared.write {
             RealmManager.shared.add(newTripRequest)
-            rider.trips.append(newTripRequest)
+            rider?.trips.append(newTripRequest)
             try DriverRepo.sharedDriver.assignTripRequest(newTripRequest._id)
         }
     }
