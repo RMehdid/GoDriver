@@ -22,7 +22,7 @@ class DriverRepo: RealmManager {
     @MainActor
     func createDriver() async throws {
         
-        await self.initialize()
+        await RealmManager.shared.initialize()
         
         guard let id = app.currentUser?.id else {
             throw GoError.userNotFound
@@ -30,7 +30,7 @@ class DriverRepo: RealmManager {
         
         let newDriver = Driver(id: id, fullname: "Samy Mehdid")
         
-        try self.write {
+        try RealmManager.shared.write {
             self.driver = newDriver
             self.add(newDriver)
         }
@@ -43,12 +43,12 @@ class DriverRepo: RealmManager {
             return
         }
         
-        guard let realm = self.realm else {
-            await self.initialize()
+        guard let realm = RealmManager.shared.realm else {
+            await RealmManager.shared.initialize()
             return
         }
         
-        self.driver = self.realm?.object(ofType: Driver.self, forPrimaryKey: id)
+        self.driver = realm.object(ofType: Driver.self, forPrimaryKey: id)
         
         debugPrint("this is driver: " + driver.debugDescription)
     }
@@ -56,7 +56,7 @@ class DriverRepo: RealmManager {
     @MainActor
     func updateDriverOnline(isOnline: Bool) throws {
         
-        try self.write {
+        try RealmManager.shared.write {
             self.driver?.isOnline = isOnline
         }
     }
@@ -64,7 +64,7 @@ class DriverRepo: RealmManager {
     @MainActor
     func assignTrip(_ id: ObjectId) throws {
         
-        try self.write {
+        try RealmManager.shared.write {
             self.driver?.currentTripId = id
             self.driver?.tripRequestId = nil
         }
@@ -73,23 +73,20 @@ class DriverRepo: RealmManager {
     @MainActor
     func rejectTrip() throws {
         
-        try self.write {
+        try RealmManager.shared.write {
             self.driver?.tripRequestId = nil
         }
     }
     
     @MainActor
     func assignTripRequest(_ id: ObjectId) throws {
-        
-        try self.write {
-            self.driver?.tripRequestId = id
-        }
+        self.driver?.tripRequestId = id
     }
     
     @MainActor
     func updateFullname(_ fullname: String) throws {
         
-        try self.write {
+        try RealmManager.shared.write {
             self.driver?.fullname = fullname
         }
     }
@@ -97,7 +94,7 @@ class DriverRepo: RealmManager {
     @MainActor
     func updatePhoneNumber(_ phone: String) throws {
         
-        try self.write {
+        try RealmManager.shared.write {
             self.driver?.phoneNumber = phone
         }
     }
