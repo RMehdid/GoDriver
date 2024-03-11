@@ -98,4 +98,11 @@ class DriverRepo: RealmManager {
             self.driver?.phoneNumber = phone
         }
     }
+    
+    @MainActor
+    func unAssignTrip() throws {
+        try RealmManager.shared.write {
+            self.driver?.currentTripId = nil
+        }
+    }
 }

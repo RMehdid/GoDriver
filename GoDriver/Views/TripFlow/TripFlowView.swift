@@ -20,6 +20,10 @@ extension Trip.Status {
             return "Start Trip"
         case .toDestination:
             return "Finish Ride"
+        case .arrivedDestination:
+            return "Complete Trip"
+        case .completed:
+            return "Go back home"
         default: return ""
         }
     }

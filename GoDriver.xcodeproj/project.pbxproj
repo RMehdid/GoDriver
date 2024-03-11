@@ -137,7 +137,6 @@
 				9982BBEB2B9709170021FB1C /* Components */,
 				99495BB72B90C9DB00D726CC /* Extensions */,
 				917097E727A0600000F1D65B /* Views */,
-				99368DF72B95D7BB000FC901 /* Models */,
 				99C96C602B9A073C006B356A /* Service */,
 				913D46502770E46A00ABE7D3 /* Preview Content */,
 				913D464E2770E46A00ABE7D3 /* Assets.xcassets */,
@@ -286,6 +285,7 @@
 		99C96C602B9A073C006B356A /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				99368DF72B95D7BB000FC901 /* Models */,
 				FB9185A02B9D139D002F1AF2 /* Managers */,
 				FB9185952B9CD4BC002F1AF2 /* Repos */,
 			);

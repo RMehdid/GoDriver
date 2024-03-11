@@ -17,7 +17,6 @@ class TripRepo: RealmManager {
     @MainActor
     func getTrip(_ id: ObjectId) async {
         self.trip = RealmManager.shared.realm?.object(ofType: Trip.self, forPrimaryKey: id)
-        debugPrint(trip)
     }
     
     @MainActor

@@ -52,6 +52,7 @@ extension Trip {
         case arrivedClient
         case toDestination
         case arrivedDestination
+        case completed
         
         var next: Self {
             switch self {
@@ -66,7 +67,9 @@ extension Trip {
             case .toDestination:
                 return .arrivedDestination
             case .arrivedDestination:
-                return .arrivedDestination
+                return .completed
+            case .completed:
+                return .completed
             }
         }
         
