@@ -114,10 +114,8 @@ struct TripFlowView: View {
                 )
             }
             .ignoresSafeArea(.all, edges: .bottom)
-            .task {
-                await viewModel.getTrip(tripId)
-            }
         }
+        .task { await viewModel.getTrip(tripId) }
         .navigationBarBackButtonHidden()
     }
 }

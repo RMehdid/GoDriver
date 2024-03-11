@@ -50,7 +50,7 @@ class TripRepo: RealmManager {
         let rider = Rider(_id: "65e836c6f4c9cfbe895f8b05")
         
         try RealmManager.shared.write {
-            self.add(rider)
+            RealmManager.shared.add(rider)
         }
         
         try RealmManager.shared.write {
