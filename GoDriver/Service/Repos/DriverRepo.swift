@@ -32,7 +32,7 @@ class DriverRepo: RealmManager {
         
         try RealmManager.shared.write {
             self.driver = newDriver
-            self.add(newDriver)
+            RealmManager.shared.add(newDriver)
         }
     }
     
