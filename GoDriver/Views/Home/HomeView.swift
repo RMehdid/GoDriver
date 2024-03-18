@@ -105,7 +105,7 @@ struct HomeView: View {
                 .toolbarBackground(.white, for: .tabBar)
                 
                 ZStack {
-                    
+                    TripHistoryView(trips: driver.trips)
                 }
                 .tabItem {
                     Label {

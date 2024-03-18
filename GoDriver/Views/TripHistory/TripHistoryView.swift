@@ -20,6 +20,7 @@ struct TripHistoryView: View {
                 }
             }
         }
+        .background(Color(red: 247/255, green: 243/255, blue: 248/255))
     }
 }
 

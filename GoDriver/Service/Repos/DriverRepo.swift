@@ -105,4 +105,11 @@ class DriverRepo: RealmManager {
             self.driver?.currentTripId = nil
         }
     }
+    
+    @MainActor
+    func addTripToHistory(trip: Trip) throws {
+        try RealmManager.shared.write {
+            self.driver?.trips.append(trip)
+        }
+    }
 }

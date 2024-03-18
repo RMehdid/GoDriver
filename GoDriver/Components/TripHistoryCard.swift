@@ -15,7 +15,7 @@ struct TripHistoryCard: View {
     var body: some View {
         VStack(alignment: .leading){
             HStack {
-                VStack(alignment: .leading){
+                VStack(alignment: .leading, spacing: 12){
                     Text("ID: \(trip._id)")
                         .font(.system(size: 14, weight: .semibold))
                     
@@ -25,7 +25,7 @@ struct TripHistoryCard: View {
                 
                 Spacer()
                 
-                VStack(alignment: .trailing){
+                VStack(alignment: .trailing, spacing: 12){
                     Text("\(trip.price) DA")
                         .font(.system(size: 18, weight: .semibold))
                     
@@ -63,6 +63,7 @@ struct TripHistoryCard: View {
                     }
                 }
             }
+            .padding(.vertical, 8)
         }
         .padding()
         .background(Color.white)

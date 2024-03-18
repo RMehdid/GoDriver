@@ -25,6 +25,9 @@ extension TripFlowView {
             do {
                 if tripManager.trip?.status == .completed {
                     try driverManager.unAssignTrip()
+                    if let trip = tripManager.trip {
+                        try driverManager.addTripToHistory(trip: trip)
+                    }
                 } else {
                     try tripManager.updateTripStatus()
                 }

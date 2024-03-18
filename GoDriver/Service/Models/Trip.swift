@@ -46,6 +46,7 @@ class Trip: RealmSwiftObject, ObjectKeyIdentifiable {
 
 extension Trip {
     enum Status: String, PersistableEnum {
+        case canceled
         case pending
         case accepted
         case toClient
@@ -56,6 +57,8 @@ extension Trip {
         
         var next: Self {
             switch self {
+            case .canceled:
+                return .accepted
             case .pending:
                 return .accepted
             case .accepted:
