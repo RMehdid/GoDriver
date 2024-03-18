@@ -15,8 +15,16 @@ struct TripHistoryView: View {
     var body: some View {
         VStack(spacing: 16){
             ScrollView(showsIndicators: false) {
-                ForEach(trips) { trip in
-                    TripHistoryCard(trip: trip)
+                ForEach(trips.groupedByDate.sorted(by: { $0.key > $1.key }), id: \.key) { dateString, trips in
+                    VStack(alignment: .leading) {
+                        Text(dateString)
+                            .font(.headline)
+                            .padding(8)
+                        
+                        ForEach(trips) {
+                            TripHistoryCard(trip: $0)
+                        }
+                    }
                 }
             }
         }

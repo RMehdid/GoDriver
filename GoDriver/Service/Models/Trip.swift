@@ -88,3 +88,37 @@ extension Trip {
         case business
     }
 }
+
+extension List where Element == Trip {
+    var groupedByDate: [String: [Trip]] {
+        var tripsByDate: [String: [Trip]] = [:]
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE dd MMMM yyyy"
+        
+        let today = Calendar.current.startOfDay(for: Date())
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: today)!
+        
+        for trip in self {
+            let tripDate = Calendar.current.startOfDay(for: trip.updatedAt)
+            var dateString = ""
+            
+            if tripDate == today {
+                dateString = "Today"
+            } else if tripDate == yesterday {
+                dateString = "Yesterday"
+            } else {
+                dateString = dateFormatter.string(from: trip.updatedAt)
+            }
+            
+            if var tripsOnDate = tripsByDate[dateString] {
+                tripsOnDate.append(trip)
+                tripsByDate[dateString] = tripsOnDate
+            } else {
+                tripsByDate[dateString] = [trip]
+            }
+        }
+        
+        return tripsByDate
+    }
+}
